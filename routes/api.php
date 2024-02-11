@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReservationsController;
+use App\Http\Controllers\TreatmentsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,3 +41,9 @@ Route::get('/user', [UsersController::class, 'index']);
 Route::get('/user/{user}', [UsersController::class, 'show']);
 Route::patch('/user/{user}', [UsersController::class, 'update']);
 Route::delete('/user/{user}', [UsersController::class, 'destroy']);
+
+Route::post('/treatment', [TreatmentsController::class, 'store']);
+Route::get('/treatment', [TreatmentsController::class, 'index']);
+Route::get('/treatment/{treatment}', [TreatmentsController::class, 'show']);
+Route::patch('/treatment/{treatment}', [TreatmentsController::class, 'update']);
+Route::delete('/treatment/{treatment}', [TreatmentsController::class, 'destroy']);

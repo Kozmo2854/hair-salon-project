@@ -17,19 +17,19 @@ return new class extends Migration
             $table->timestamp('appointment_time');
 
             //foreign keys
-            $table->integer('treatment_id');
+            $table->integer('treatment_id')->unsigned();
             $table->index('treatment_id');
             $table->foreign('treatment_id')
                 ->references('id')
                 ->on('treatments')
                 ->onDelete('cascade');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->index('user_id');
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->integer('hairdresser_id');
+            $table->integer('hairdresser_id')->unsigned();
             $table->index('hairdresser_id');
             $table->foreign('hairdresser_id')
                 ->references('id')
