@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Repository\ProductRepository;
 use Exception;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
