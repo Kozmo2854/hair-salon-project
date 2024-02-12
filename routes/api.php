@@ -26,9 +26,9 @@ Route::delete('/product/{product}', [ProductController::class, 'destroy']);
 
 Route::post('/category', [CategoriesController::class, 'store']);
 Route::get('/category', [CategoriesController::class, 'index']);
-Route::get('/category/{category}', [CategoriesController::class, 'show']);
-Route::patch('/category/{category}', [CategoriesController::class, 'update']);
-Route::delete('/category/{category}', [CategoriesController::class, 'destroy']);
+Route::get('/category/{id}', [CategoriesController::class, 'show']);
+Route::patch('/category/{id}', [CategoriesController::class, 'update']);
+Route::delete('/category/{id}', [CategoriesController::class, 'destroy']);
 
 Route::post('/reservation', [ReservationsController::class, 'store']);
 Route::get('/reservation', [ReservationsController::class, 'index']);
