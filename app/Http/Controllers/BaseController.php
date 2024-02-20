@@ -30,7 +30,7 @@ abstract class BaseController extends Controller
      */
     public function show($id): Model
     {
-        return $this->modelClass::find($id);
+        return $this->modelClass::findOrFail($id);
     }
 
     /**

@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReservationsController;
+use App\Http\Controllers\RolesController;
 use App\Http\Controllers\TreatmentsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -47,3 +48,9 @@ Route::get('/treatment', [TreatmentsController::class, 'index']);
 Route::get('/treatment/{treatment}', [TreatmentsController::class, 'show']);
 Route::patch('/treatment/{treatment}', [TreatmentsController::class, 'update']);
 Route::delete('/treatment/{treatment}', [TreatmentsController::class, 'destroy']);
+
+Route::post('/role', [RolesController::class, 'store']);
+Route::get('/role', [RolesController::class, 'index']);
+Route::get('/role/{role}', [RolesController::class, 'show']);
+Route::patch('/role/{role}', [RolesController::class, 'update']);
+Route::delete('/role/{role}', [RolesController::class, 'destroy']);
