@@ -1,5 +1,6 @@
 <?php
 
+use App\View\Constants\ViewConstants;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'images' => ViewConstants::IMAGES_MAIN
+    ]);
 });
 
 Route::get('/test', function () {

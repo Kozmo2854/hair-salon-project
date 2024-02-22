@@ -11,3 +11,6 @@
         justify-content: center;
     }
 }
+.main-image{
+    background: url("https://bulma.io/images/placeholders/800x480.png");
+}
