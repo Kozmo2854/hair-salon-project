@@ -1,0 +1,16 @@
+.navbar.has-centered-logo-alt2 {
+    .navbar-menu {
+        flex-wrap: wrap;
+    }
+    .navbar-start,
+    .navbar-end{
+        flex: 1 1 0;
+    }
+    .navbar-wide.navbar-start {
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+}
+.main-image{
+    background: url("https://bulma.io/images/placeholders/800x480.png");
+}
