@@ -15,18 +15,3 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome', [
-        'images' => ViewConstants::IMAGES_MAIN
-    ]);
-});
-
-Route::get('/shop', function () {
-    return view('shop', [
-        'categoriesName' => CategoryService::getCategories()
-    ]);
-});
-
-Route::get('/test', function () {
-    return view('header');
-});
