@@ -68,36 +68,6 @@
         e.stopPropagation();
     });
 
-    function showCart(cart) {
-        let text = ''
-        let totalPrice = 0
-        for (const item of cart) {
-            totalPrice += item.originalPrice
-            text += `\n` +
-                `<li>\n` +
-                `    <a href="#">\n` +
-                `        <img class="img-responsive"\n` +
-                `             src=${item.image}\n` +
-                `             alt="product"/>\n` +
-                `    </a>\n` +
-                `    <div class="product-meta">\n` +
-                `        <h5 class="product-title"><a href="#">${item.title}</a></h5>\n` +
-                `        <p class="product-price">1 × ${item.originalPrice}</p>\n` +
-                `    </div>\n` +
-                `    <a class="cart-cancel" data-id="${item.id}" href="#">x</a>\n` +
-                `</li>`
-        }
-        $('.total-price').html('$' + totalPrice)
-        $('.products-in-cart-list').html(text)
-        $('.cart-cancel').on('click', function (e) {
-            let productId = $(e.target).attr('data-id')
-            console.log(productId)
-            let cart = JSON.parse(localStorage.getItem('cart'))
-            cart = cart.filter(product => product.id!=productId)
-            localStorage.setItem("cart",JSON.stringify(cart))
-            showCart(cart)
-        })
-    }
 
     // If Click on [ Search-cancel ] Link
     $moduleCancel.on("click", function (e) {
@@ -515,10 +485,49 @@
                     "Access-Control-Request-Method": "GET",
                 },
                 success: function (item) {
-                    currentCart.push(item);
+                    let itemInCart = currentCart.some(function (e) {
+                        if (e.id==item.id){
+                            e.quantity++
+                            return true
+                        }
+                    });
+                    if (itemInCart==[]) {
+                        item.quantity=1
+                        currentCart.push(item);
+                    }
                     localStorage.setItem("cart", JSON.stringify(currentCart));
                 }
             });
+        })
+    }
+    function showCart(cart) {
+        let text = ''
+        let totalPrice = 0
+        for (const item of cart) {
+            totalPrice += item.originalPrice * item.quantity
+            text += `` +
+                `<li>` +
+                `    <a href="#">` +
+                `        <img class="img-responsive"` +
+                `             src=${item.image}` +
+                `             alt="product"/>` +
+                `    </a>` +
+                `    <div class="product-meta">` +
+                `        <h5 class="product-title"><a href="#">${item.title}</a></h5>` +
+                `        <p class="product-price">${item.quantity} × ${item.originalPrice}</p>` +
+                `    </div>` +
+                `    <a class="cart-cancel" data-id="${item.id}" href="#">x</a>` +
+                `</li>`
+        }
+        $('.total-price').html('$' + totalPrice)
+        $('.products-in-cart-list').html(text)
+        $('.cart-cancel').on('click', function (e) {
+            let productId = $(e.target).attr('data-id')
+            console.log(productId)
+            let cart = JSON.parse(localStorage.getItem('cart'))
+            cart = cart.filter(product => product.id!=productId)
+            localStorage.setItem("cart",JSON.stringify(cart))
+            showCart(cart)
         })
     }
 

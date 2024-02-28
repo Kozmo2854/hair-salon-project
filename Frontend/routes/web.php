@@ -29,8 +29,15 @@ Route::get('/shop', function () {
         'numberOfPages' => $productData['total'] / 9
     ]);
 });
-Route::get('/cart',function (){
+Route::get('/cart', function () {
     return view('user.shop-cart');
+});
+Route::get('/register', function () {
+    return view('user.register');
+});
+
+Route::get('/login', function (){
+    return view('user.login');
 });
 
 Route::prefix('/admin')->group(function () {

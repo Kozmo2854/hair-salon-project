@@ -4,12 +4,12 @@
 
 <body>
     <div class="preloader">
-    <div class="spinner">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
     </div>
-</div>
     <!-- Document Wrapper
 	============================================= -->
     <div id="wrapper" class="wrapper clearfix">
@@ -54,7 +54,6 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="shop-cart-heading">
-                    You have (3 items)
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -71,92 +70,7 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="cart-product">
-                                <td></td>
-                                <td class="cart-product-item">
-
-                                    <div class="cart-product-img">
-                                        <a href="#">
-											<img src="http://demo.zytheme.com/hairy/assets/images/shop/cart/1.jpg" alt="product"/>
-										</a>
-                                    </div>
-                                    <div class="cart-product-name">
-                                        <h6><a href="#">Gel Cream</a></h6>
-                                    </div>
-                                </td>
-                                <td class="cart-product-price">$ 7.5</td>
-                                <td class="cart-product-quantity">
-                                    <div class="product-quantity">
-                                        <span class="qant-plus"><i class="fa fa-caret-up"></i></span>
-                                        <input type="text" value="1" id="pro1-qunt" readonly>
-                                        <span class="qant-minus"><i class="fa fa-caret-down"></i></span>
-                                    </div>
-                                </td>
-                                <td class="cart-product-total">$ 7.5</td>
-                                <td>
-                                    <div class="cart-product-remove">
-                                        <i class="lnr lnr-cross"></i>
-                                    </div>
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr class="cart-product">
-                                <td></td>
-                                <td class="cart-product-item">
-                                    <div class="cart-product-img">
-                                        <a href="#">
-											<img src="http://demo.zytheme.com/hairy/assets/images/shop/cart/2.jpg" alt="product"/>
-										</a>
-                                    </div>
-                                    <div class="cart-product-name">
-                                        <h6><a href="#">Hair Dryer</a></h6>
-                                    </div>
-                                </td>
-                                <td class="cart-product-price">$ 35.00</td>
-                                <td class="cart-product-quantity">
-                                    <div class="product-quantity">
-                                        <span class="qant-plus"><i class="fa fa-caret-up"></i></span>
-                                        <input type="text" value="1" id="pro2-qunt" readonly>
-                                        <span class="qant-minus"><i class="fa fa-caret-down"></i></span>
-                                    </div>
-                                </td>
-                                <td class="cart-product-total">$ 35.00</td>
-                                <td>
-                                    <div class="cart-product-remove">
-                                        <i class="lnr lnr-cross"></i>
-                                    </div>
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr class="cart-product">
-                                <td></td>
-                                <td class="cart-product-item">
-                                    <div class="cart-product-img">
-                                        <a href="#">
-											<img src="http://demo.zytheme.com/hairy/assets/images/shop/cart/3.jpg" alt="product"/>
-										</a>
-                                    </div>
-                                    <div class="cart-product-name">
-                                        <h6><a href="#">Hair Brush</a></h6>
-                                    </div>
-                                </td>
-                                <td class="cart-product-price">$ 23.00</td>
-                                <td class="cart-product-quantity">
-                                    <div class="product-quantity">
-                                        <span class="qant-plus"><i class="fa fa-caret-up"></i></span>
-                                        <input type="text" value="1" id="pro3-qunt" readonly>
-                                        <span class="qant-minus"><i class="fa fa-caret-down"></i></span>
-                                    </div>
-                                </td>
-                                <td class="cart-product-total">$ 23.00</td>
-                                <td>
-                                    <div class="cart-product-remove">
-                                        <i class="lnr lnr-cross"></i>
-                                    </div>
-                                </td>
-                                <td></td>
-                            </tr>
+                        <tbody class="cart-product-body">
                         </tbody>
                     </table>
                 </div>
@@ -173,7 +87,7 @@
                         <button type="submit" class="btn btn--secondary">Apply</button>
                     </form>
                     <div class="cart-total-amount text-right">
-                        Subtotal :<span class="">$100.5</span>
+                        Subtotal :<span class="subtotal"></span>
                     </div>
                     <!-- .cart-total-amount end -->
                 </div>
@@ -322,6 +236,8 @@
 <script src="http://demo.zytheme.com/hairy/assets/js/jquery-2.2.4.min.js"></script>
 <script src="http://demo.zytheme.com/hairy/assets/js/plugins.js"></script>
 <script src="http://demo.zytheme.com/hairy/assets/js/functions.js"></script>
+<script src="{{ asset('js/html5shiv.js') }}" defer></script>
+<script src="{{ asset('js/cart.js') }}" defer></script>
 </body>
 
 </html>

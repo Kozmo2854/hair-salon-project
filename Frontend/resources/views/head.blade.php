@@ -15,12 +15,11 @@
 
     <!-- Stylesheets
     ============================================= -->
-    <link href="http://demo.zytheme.com/hairy/assets/css/external.css" rel="stylesheet">
     <link href="http://demo.zytheme.com/hairy/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
     <link href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/external.css') }}" rel="stylesheet">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
     <script src="{{ asset('/js/html5shiv.js') }}" defer></script>

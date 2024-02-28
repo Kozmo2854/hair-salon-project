@@ -7980,14 +7980,13 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
     display: grid;
     grid-template-columns: 1fr 2fr 10px;
 }
-.delete-item-from-cart{
-    font-family: 'Linearicons-Free';
-    content: "\e870";
-    font-size: 12px;
-    position: relative;
+.lnr-cross:before{
+    content: '';
+    display:none;
+}
+.product-image{
+    width:200px;
+}
+.no-products{
     text-align: center;
-    left: 0;
-    top: 0;
-    line-height: 19px;
-    color: #aaaaaa;
 }

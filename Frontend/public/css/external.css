@@ -1555,7 +1555,7 @@ img.mfp-img {
 .lnr-pointer-left:before {
 	content: "\e8a9";
 }
-/* 
+/*
  *  Owl Carousel - Animate Plugin
  */
 .owl-carousel .animated {
@@ -1594,7 +1594,7 @@ img.mfp-img {
   }
 }
 
-/* 
+/*
  *  Owl Carousel - Animate Plugin
  */
 .owl-carousel .animated {
@@ -1633,7 +1633,7 @@ img.mfp-img {
   }
 }
 
-/* 
+/*
  * 	Owl Carousel - Auto Height Plugin
  */
 .owl-height {
@@ -1644,7 +1644,7 @@ img.mfp-img {
   transition: height 500ms ease-in-out;
 }
 
-/* 
+/*
  *  Core Owl Carousel CSS File
  */
 .owl-carousel {
@@ -1740,7 +1740,7 @@ img.mfp-img {
   display: block;
 }
 
-/* 
+/*
  * 	Owl Carousel - Lazy Load Plugin
  */
 .owl-carousel .owl-item .owl-lazy {
@@ -1755,7 +1755,7 @@ img.mfp-img {
   transform-style: preserve-3d;
 }
 
-/* 
+/*
  * 	Owl Carousel - Video Plugin
  */
 .owl-carousel .owl-video-wrapper {
