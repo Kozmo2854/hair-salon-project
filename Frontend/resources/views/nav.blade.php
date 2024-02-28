@@ -2,7 +2,7 @@
 <div class="container">
     <!--Centered Logo Expanded with Additional Menu Navbar -->
     <div class="columns">
-        <div class="column is-12">
+        <div class="column is-fullwidth">
             <div class="card">
                 <div class="card-content">
                     <nav class="navbar is-light is-transparent has-centered-logo-alt2" role="navigation" aria-label="main navigation">

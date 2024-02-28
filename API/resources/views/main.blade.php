@@ -1,4 +1,4 @@
-@include('header');
+@include('head');
 @include('nav');
 <div class="block">
     <section class="hero is-large">

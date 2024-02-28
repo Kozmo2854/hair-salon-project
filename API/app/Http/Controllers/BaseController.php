@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Exception;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\View\Component;
 
 abstract class BaseController extends Controller
 {
@@ -17,10 +21,14 @@ abstract class BaseController extends Controller
     }
 
     /**
-     * @return Collection
+     * @param Request $request
+     * @return string|array|Collection
      */
-    public function index(): Collection
+    public function index(Request $request): string|array|Collection
     {
+        if($request->get('page')){
+            return $this->modelClass::paginate(9)->toJson();
+        }
         return $this->modelClass::all();
     }
 
