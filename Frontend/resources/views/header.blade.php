@@ -88,7 +88,7 @@
                             <div class="clearfix">
                             </div>
                             <div class="cart--control">
-                                <a class="btn btn--primary btn--bordered btn--rounded btn--block" href="#">View Cart
+                                <a class="btn btn--primary btn--bordered btn--rounded btn--block" href="/cart">View Cart
                                     & Checkout</a>
                             </div>
                         </div>

@@ -578,4 +578,9 @@
 {{--@include('user.footer')--}}
 </body>
 
+<script src="{{ asset('/js/html5shiv.js') }}" defer></script>
+<script src="{{ asset('/js/jquery-2.2.4.min.js') }}" defer></script>
+<script src="{{ asset('/js/plugins.js') }}" defer></script>
+<script src="{{ asset('js/respond.min.js') }}" defer></script>
+<script src="{{ asset('js/functions.js') }}" defer></script>
 </html>
