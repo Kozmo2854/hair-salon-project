@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Exception;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -12,7 +14,7 @@ class UsersController extends BaseController
 {
     protected mixed $modelClass = User::class;
 
-    public function store(Request $request): Model
+    public function store(Request $request): Model|string
     {
         $credentials = $request->all();
         $user = new ($this->modelClass)();
@@ -21,10 +23,13 @@ class UsersController extends BaseController
         $user->password = Hash::make($credentials['password']);
         $user->name = $credentials['name'];
         $user->lastname = $credentials['lastName'];
-        $user->role_id = $credentials['roleId'];
+        $user->role_id = $credentials['roleId'] ?? 2;
 
-
-        $user->save();
+        try {
+            $user->save();
+        }catch (Exception $e){
+            return $e->getMessage();
+        }
         return $user;
     }
 

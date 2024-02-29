@@ -1141,9 +1141,9 @@ img.mfp-img {
 .lnr-enter:before {
 	content: "\e81f";
 }
-.lnr-exit:before {
-	content: "\e820";
-}
+/*.lnr-exit:before {*/
+/*	content: "\e820";*/
+/*}*/
 .lnr-graduation-hat:before {
 	content: "\e821";
 }

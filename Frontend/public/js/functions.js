@@ -547,6 +547,7 @@
             success: function (userData) {
                 if(userData){
                     saveSession(userData)
+                    alert('Successfully logged in, you\'ll be redirected to login page')
                     window.location.replace('/')
                 }else{
                     alert('Invalid credentials')
@@ -556,14 +557,52 @@
         });
     })
 
-    function saveSession(userData) {
+
+    $('.register-form').submit(function (e) {
+        e.preventDefault()
         $.ajax({
+            type: "POST",
+            url: "http://localhost:90/api/user",
+            data: {
+                "email": $('.register-email').val(),
+                "password": $('.register-password').val(),
+                "name": $('.register-name').val(),
+                "lastName": $('.register-last-name').val()
+            },
+            headers: {
+                "Origin": "http://localhost:8000",
+                "Host": "localhost:90",
+                "Access-Control-Request-Method": "GET",
+            },
+            error:function (xhr, ajaxOptions, thrownError){
+                alert(xhr.responseText)
+            },
+            success: function (userData) {
+                if(userData){
+                    alert('Successfully registered, you\'ll be redirected to login page.')
+                    window.location.replace('/login')
+                }else{
+                    alert('Invalid credentials')
+                    $('.register-form').trigger('reset');
+                }
+            }
+        });
+    })
+
+    function saveSession(userData) {
+        return $.ajax({
             type: "POST",
             url: "http://localhost:8000/api/saveSession",
             data: {
-                "userData" : userData
-            },
-        });
+                "userData": userData
+            }
+        })
     }
+
+    $('.lnr-exit').click(function () {
+        saveSession('')
+        alert('Successfully logged out, you\'ll be redirected to homepage')
+        window.location.replace('/')
+    })
 
 }(jQuery));

@@ -2,6 +2,7 @@
     use App\Services\UserService;
     use Illuminate\Support\Facades\Session;
 @endphp
+{{--@dd(Session::get('user'))--}}
 <header id="navbar-spy" class="header header-topbar header-transparent header-fixed">
     <div id="top-bar" class="top-bar">
         <div class="container">
@@ -18,8 +19,13 @@
                         </ul>
                     </div><!-- .col-md-6 end -->
                     <div class="col-xs-12 col-sm-6 col-md-6 top--info text-right text-center-xs">
-                        <span class="top--login"><i class="lnr lnr-exit"></i><a href="/login">Login</a> / <a
-                                href="/register">Register</a></span>
+                        @if(!empty(Session::get('user')))
+                            <span class="top--login"><a href="#" class="lnr lnr-exit"></a>
+                        @endif
+                        @if(empty(Session::get('user')))
+                            <a href="/login">Login</a> / <a href="/register">Register</a>
+                        @endif
+                        </span>
                         <span class="top--social">
 						<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
 						<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>

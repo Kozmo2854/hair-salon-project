@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Session;
 class SessionController extends Controller
 {
     public function test(Request $request) {
-        Session::put('user', $request->all());
+        if (!empty(Session::get('user'))){
+            Session::forget('user');
+            Session::flush();
+        }else {
+            Session::put('user', $request->all());
+        }
     }
 }

@@ -32,12 +32,12 @@
                                 </div>
                                 <div class="row clearfix">
                                     <div class="">
-                                        <form>
+                                        <form class="register-form">
                                             <div class="input_field"><span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                                                <input type="email" name="email" placeholder="Email" required/>
+                                                <input type="email" class="register-email" name="email" placeholder="Email" required/>
                                             </div>
                                             <div class="input_field"><span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                                                <input type="password" name="password" placeholder="Password" required/>
+                                                <input type="password" class="register-password" name="password" placeholder="Password" required/>
                                             </div>
                                             <div class="input_field"><span><i aria-hidden="true" class="fa fa-lock"></i></span>
                                                 <input type="password" name="password" placeholder="Re-type Password" required/>
@@ -45,12 +45,12 @@
                                             <div class="row clearfix">
                                                 <div class="col_half">
                                                     <div class="input_field"><span><i aria-hidden="true" class="fa fa-user"></i></span>
-                                                        <input type="text" name="name" placeholder="First Name"/>
+                                                        <input type="text" class="register-name" name="name" placeholder="First Name"/>
                                                     </div>
                                                 </div>
                                                 <div class="col_half">
                                                     <div class="input_field"><span><i aria-hidden="true" class="fa fa-user"></i></span>
-                                                        <input type="text" name="name" placeholder="Last Name" required/>
+                                                        <input type="text" class="register-last-name" name="name" placeholder="Last Name" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -94,8 +94,9 @@
 </div>
 <script src="http://demo.zytheme.com/hairy/assets/js/jquery-2.2.4.min.js"></script>
 <script src="http://demo.zytheme.com/hairy/assets/js/plugins.js"></script>
-<script src="http://demo.zytheme.com/hairy/assets/js/functions.js"></script>
+{{--<script src="http://demo.zytheme.com/hairy/assets/js/functions.js"></script>--}}
 <script src="{{ asset('js/html5shiv.js') }}" defer></script>
+<script src="{{ asset('js/functions.js') }}" defer></script>
 <script src="{{ asset('js/cart.js') }}" defer></script>
 </body>
 

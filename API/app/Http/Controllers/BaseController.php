@@ -44,7 +44,7 @@ abstract class BaseController extends Controller
     /**
      * @throws Exception
      */
-    public function store(Request $request): Model
+    public function store(Request $request): Model|string
     {
         return $this->modelClass::create($request->all());
     }
