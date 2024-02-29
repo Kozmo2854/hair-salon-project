@@ -7990,3 +7990,6 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
 .no-products{
     text-align: center;
 }
+.bg-overlay{
+    height: 100dvh;
+}

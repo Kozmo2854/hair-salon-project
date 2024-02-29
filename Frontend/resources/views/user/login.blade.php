@@ -32,12 +32,12 @@
                                 </div>
                                 <div class="row clearfix">
                                     <div class="">
-                                        <form>
+                                        <form class="sign-in">
                                             <div class="input_field"><span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                                <input type="email" name="email" placeholder="Email" required=""/>
+                                                <input type="email" class="username" name="email" placeholder="Email" required=""/>
                                             </div>
                                             <div class="input_field"><span><i class="fa fa-lock" aria-hidden="true"></i></span>
-                                                <input type="password" name="phone" placeholder="Password" required=""/>
+                                                <input type="password" class="password" name="password" placeholder="Password" required=""/>
                                             </div>
                                             <input class="button" type="submit" value="Sign in"/>
                                             <div class="row clearfix bottom_row">
@@ -64,9 +64,11 @@
 </div>
 <script src="http://demo.zytheme.com/hairy/assets/js/jquery-2.2.4.min.js"></script>
 <script src="http://demo.zytheme.com/hairy/assets/js/plugins.js"></script>
-<script src="http://demo.zytheme.com/hairy/assets/js/functions.js"></script>
-<script src="{{ asset('js/html5shiv.js') }}" defer></script>
-<script src="{{ asset('js/cart.js') }}" defer></script>
+<script src="{{ asset('/js/html5shiv.js') }}" defer></script>
+<script src="{{ asset('/js/jquery-2.2.4.min.js') }}" defer></script>
+<script src="{{ asset('/js/plugins.js') }}" defer></script>
+<script src="{{ asset('/js/respond.min.js') }}" defer></script>
+<script src="{{ asset('/js/functions.js') }}" defer></script>
 </body>
 
 </html>

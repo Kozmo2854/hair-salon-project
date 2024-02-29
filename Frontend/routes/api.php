@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/test', [\App\Http\Controllers\TestController::class, 'test']);
+Route::post('/saveSession', [\App\Http\Controllers\SessionController::class, 'test']);

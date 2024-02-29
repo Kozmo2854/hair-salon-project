@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReservationsController;
 use App\Http\Controllers\RolesController;
@@ -41,6 +42,7 @@ Route::get('/user', [UsersController::class, 'index']);
 Route::get('/user/{user}', [UsersController::class, 'show']);
 Route::patch('/user/{user}', [UsersController::class, 'update']);
 Route::delete('/user/{user}', [UsersController::class, 'destroy']);
+Route::get('/verifyUser', [UsersController::class, 'verifyUser']);
 
 Route::post('/treatment', [TreatmentsController::class, 'store']);
 Route::get('/treatment', [TreatmentsController::class, 'index']);
@@ -53,3 +55,5 @@ Route::get('/role', [RolesController::class, 'index']);
 Route::get('/role/{role}', [RolesController::class, 'show']);
 Route::patch('/role/{role}', [RolesController::class, 'update']);
 Route::delete('/role/{role}', [RolesController::class, 'destroy']);
+
+Route::get('/login',[LoginController::class,'authenticate']);

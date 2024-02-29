@@ -530,5 +530,40 @@
             showCart(cart)
         })
     }
+    $('.sign-in').submit(function (e) {
+        e.preventDefault()
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:90/api/login",
+            data: {
+                "email": $('.username').val(),
+                "password": $('.password').val()
+            },
+            headers: {
+                "Origin": "http://localhost:8000",
+                "Host": "localhost:90",
+                "Access-Control-Request-Method": "GET",
+            },
+            success: function (userData) {
+                if(userData){
+                    saveSession(userData)
+                    window.location.replace('/')
+                }else{
+                    alert('Invalid credentials')
+                    $('.sign-in').trigger('reset');
+                }
+            }
+        });
+    })
+
+    function saveSession(userData) {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8000/api/saveSession",
+            data: {
+                "userData" : userData
+            },
+        });
+    }
 
 }(jQuery));

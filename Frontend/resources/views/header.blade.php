@@ -1,3 +1,7 @@
+@php
+    use App\Services\UserService;
+    use Illuminate\Support\Facades\Session;
+@endphp
 <header id="navbar-spy" class="header header-topbar header-transparent header-fixed">
     <div id="top-bar" class="top-bar">
         <div class="container">
@@ -14,7 +18,8 @@
                         </ul>
                     </div><!-- .col-md-6 end -->
                     <div class="col-xs-12 col-sm-6 col-md-6 top--info text-right text-center-xs">
-                        <span class="top--login"><i class="lnr lnr-exit"></i><a href="/login">Login</a> / <a href="/register">Register</a></span>
+                        <span class="top--login"><i class="lnr lnr-exit"></i><a href="/login">Login</a> / <a
+                                href="/register">Register</a></span>
                         <span class="top--social">
 						<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
 						<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
@@ -63,6 +68,13 @@
                         <li class="has-dropdown">
                             <a href="/shop">shop</a>
                         </li>
+                        <!-- li end -->
+                        <!-- Admin panel -->
+                        @if(Session::get('user')['userData']['role_id']= =1)
+                        <li class="has-dropdown">
+                            <a href="/shop">Admin Panel</a>
+                        </li>
+                        @endif>
                         <!-- li end -->
                     </ul>
                     <!-- Module Cart -->
