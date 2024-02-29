@@ -70,7 +70,7 @@
                         </li>
                         <!-- li end -->
                         <!-- Admin panel -->
-                        @if(Session::get('user')['userData']['role_id']= =1)
+                        @if( isset(Session::get('user')['userData']) && Session::get('user')['userData']['role_id']==1)
                         <li class="has-dropdown">
                             <a href="/shop">Admin Panel</a>
                         </li>
