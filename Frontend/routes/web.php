@@ -12,6 +12,7 @@
 |
 */
 
+use App\Http\Middleware\PreventUserAccess;
 use App\Services\CategoryService;
 use App\Services\ProductService;
 use Illuminate\Support\Facades\Http;
@@ -38,7 +39,13 @@ Route::get('/register', function () {
     return view('user.register');
 });
 
+Route::get('/login', function () {
+    return view('user.login');
+});
 
+Route::get('/forbidden', function () {
+    return view('user.forbidden');
+});
 
 Route::get('/orders', function () {
     $userId = Session::get('user')['userData']['id'];
@@ -48,7 +55,7 @@ Route::get('/orders', function () {
     ]);
 });
 
-Route::prefix('/admin')->group(function () {
+Route::prefix('/admin')->middleware(PreventUserAccess::class)->group(function () {
     Route::get('/home', function () {
         return view('admin/home', [
             'products' => ProductService::getAdminProducts()['data']

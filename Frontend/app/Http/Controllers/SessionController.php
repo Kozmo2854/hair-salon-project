@@ -15,4 +15,9 @@ class SessionController extends Controller
             Session::put('user', $request->all());
         }
     }
+
+    public function getSession()
+    {
+        return Session::get('user')['userData'];
+    }
 }

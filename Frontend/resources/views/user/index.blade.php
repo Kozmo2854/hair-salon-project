@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+@php use Illuminate\Support\Facades\Session; @endphp
+    <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 @include('head')
 
@@ -500,21 +501,21 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
                     <div class="booking-form">
-                        <form class="mb-0">
+                        <form class="mb-0 contact-form">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-6">
                                     <input type="text" class="form-control" name="contact-name" id="name"
-                                           placeholder="Your Name">
+                                           placeholder="Your Name" required>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-6">
                                     <input type="text" class="form-control" name="contact-phone" id="phone"
-                                           placeholder="Phone">
+                                           placeholder="Phone" required>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-12 col-md-6">
                                     <div class="form-select">
                                         <i class="fa fa-angle-down"></i>
-                                        <select class="form-control" name="services" id="services">
+                                        <select class="form-control" name="services" id="services" required>
                                             <option value="2">Select Service</option>
                                             <option value="3">Service 1</option>
                                             <option value="4">Service 2</option>
@@ -525,7 +526,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-6">
                                     <div class="form-select">
                                         <i class="fa fa-angle-down"></i>
-                                        <select class="form-control" name="date" id="date">
+                                        <select class="form-control" name="date" id="date" required>
                                             <option value="">Date</option>
                                             <option value="March 23">March 23, 2017</option>
                                             <option value="March 24">March 24, 2017</option>
@@ -537,10 +538,15 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <textarea class="form-control" name="contact-message" id="message" rows="3"
-                                              placeholder="Add your notes (optional)"></textarea>
+                                              placeholder=
+                                              @if(!Session::get('user'))
+                                                "Please login before booking."
+                                              @else
+                                                "Add your notes (optional)"
+                                              @endif></textarea>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <input type="submit" value="Book Now" name="submit"
+                                    <input @if(!Session::get('user')) disabled @endif type="submit" value="Book Now" name="submit"
                                            class="btn btn--secondary btn--rounded btn--block">
                                 </div>
                             </div>
@@ -582,5 +588,5 @@
 <script src="{{ asset('/js/jquery-2.2.4.min.js') }}" defer></script>
 <script src="{{ asset('/js/plugins.js') }}" defer></script>
 <script src="{{ asset('js/respond.min.js') }}" defer></script>
-<script src="{{ asset('js/functions.js') }}" defer></script>
+<script src="{{ asset('/js/functions.js') }}" defer></script>
 </html>

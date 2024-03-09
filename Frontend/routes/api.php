@@ -18,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('/saveSession', [SessionController::class, 'toggleSession']);
+Route::get('/getSession', [SessionController::class, 'getSession']);
 Route::post('/createOrder', [OrderController::class, 'createOrder']);

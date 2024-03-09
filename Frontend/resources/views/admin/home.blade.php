@@ -3,9 +3,12 @@
 <script src="{{ asset('/js/jquery-2.2.4.min.js') }}" defer></script>
 <script src="{{ asset('/js/plugins.js') }}" defer></script>
 <script src="{{ asset('js/respond.min.js') }}" defer></script>
-<link href="http://cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css" rel="stylesheet" defer>
+<link href="http://cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css" rel="stylesheet">
 <script src="http://cdn.datatables.net/2.0.1/js/dataTables.min.js" type="application/javascript" defer></script>
-<script src="{{ asset('js/functions.js') }}" defer></script>
+<script defer>
+    $('.products-table').DataTable();
+</script>
+<script
 @include('header')
 <div class="products-table-div">
     <table class="products-table display" style="width:100%">

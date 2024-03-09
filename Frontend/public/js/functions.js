@@ -605,6 +605,38 @@
         window.location.replace('/')
     })
 
-    $('.products-table').DataTable();
+    $('.contact-form').submit(function (e) {
+        e.preventDefault()
+        let formDataArray = $('.contact-form').serializeArray()
+        let formDataObject = {}
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8000/api/getSession",
+            success: function (data) {
+                formDataArray.push({ name: "user_id", value: data.id })
+                $.each(formDataArray, function(index, field) {
+                    formDataObject[field.name] = field.value;
+                });
+                submitBookingForm(formDataObject)
+                $('.contact-form')[0].reset()
+            }
+        })
+    })
 
+    function submitBookingForm(formDataObject) {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:90/api/bookings",
+            data: formDataObject,
+            headers: {
+                "Origin": "http://localhost:8000",
+                "Host": "localhost:90",
+                "Access-Control-Request-Method": "GET",
+            },
+            success: function (userData) {
+                alert('Successfully logged in, you\'ll be redirected to login page')
+                $('.contact-form')[0].reset()
+            }
+        });
+    }
 }(jQuery));
