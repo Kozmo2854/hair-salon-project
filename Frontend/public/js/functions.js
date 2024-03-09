@@ -605,4 +605,6 @@
         window.location.replace('/')
     })
 
+    $('.products-table').DataTable();
+
 }(jQuery));

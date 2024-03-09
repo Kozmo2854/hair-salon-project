@@ -36,12 +36,14 @@ Route::get('/register', function () {
     return view('user.register');
 });
 
-Route::get('/login', function (){
+Route::get('/login', function () {
     return view('user.login');
 });
 
 Route::prefix('/admin')->group(function () {
-    Route::get('/products', function () {
-        return view('admin/adminProducts');
+    Route::get('/home', function () {
+        return view('admin/home', [
+            'products' => ProductService::getAdminProducts()['data']
+        ]);
     });
 });

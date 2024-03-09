@@ -78,9 +78,9 @@
                         <!-- Admin panel -->
                         @if( isset(Session::get('user')['userData']) && Session::get('user')['userData']['role_id']==1)
                         <li class="has-dropdown">
-                            <a href="/shop">Admin Panel</a>
+                            <a href="/admin/home">Admin Panel</a>
                         </li>
-                        @endif>
+                        @endif
                         <!-- li end -->
                     </ul>
                     <!-- Module Cart -->
