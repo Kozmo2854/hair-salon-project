@@ -24,6 +24,7 @@ Route::get('/product', [ProductController::class, 'index']);
 Route::get('/product/{product}', [ProductController::class, 'show']);
 Route::patch('/product/{product}', [ProductController::class, 'update']);
 Route::delete('/product/{product}', [ProductController::class, 'destroy']);
+Route::get('/admin/product',[ProductController::class,'getProductsForAdminPanel']);
 
 Route::post('/category', [CategoriesController::class, 'store']);
 Route::get('/category', [CategoriesController::class, 'index']);
