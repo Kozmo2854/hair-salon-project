@@ -75,6 +75,11 @@
                             <a href="/shop">shop</a>
                         </li>
                         <!-- li end -->
+                        <!-- view Orders -->
+                        <li class="has-dropdown">
+                            <a href="/orders">View Orders</a>
+                        </li>
+                        <!-- li end -->
                         <!-- Admin panel -->
                         @if( isset(Session::get('user')['userData']) && Session::get('user')['userData']['role_id']==1)
                         <li class="has-dropdown">

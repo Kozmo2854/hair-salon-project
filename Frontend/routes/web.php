@@ -14,7 +14,9 @@
 
 use App\Services\CategoryService;
 use App\Services\ProductService;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 
 Route::get('/', function () {
@@ -36,8 +38,14 @@ Route::get('/register', function () {
     return view('user.register');
 });
 
-Route::get('/login', function () {
-    return view('user.login');
+
+
+Route::get('/orders', function () {
+    $userId = Session::get('user')['userData']['id'];
+    $orders = json_decode(Http::get('http://hairsaloon.api/api/order/user/' . $userId)->body());
+    return view('user.orders', [
+        'orders' => $orders->data,
+    ]);
 });
 
 Route::prefix('/admin')->group(function () {
