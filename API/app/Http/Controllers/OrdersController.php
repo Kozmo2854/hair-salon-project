@@ -13,7 +13,7 @@ class OrdersController extends BaseController
     public function store(Request $request): Model|string
     {
         $request->merge([
-            'products' => json_encode($request->get('products')),
+            'products' => $request->get('products'),
         ]);
         return parent::store($request);
     }

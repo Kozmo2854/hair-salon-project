@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Session;
 
 class SessionController extends Controller
 {
-    public function test(Request $request) {
+    public function toggleSession(Request $request) {
         if (!empty(Session::get('user'))){
             Session::forget('user');
             Session::flush();

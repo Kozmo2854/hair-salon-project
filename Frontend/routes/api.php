@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::post('/saveSession', [\App\Http\Controllers\SessionController::class, 'test']);
+Route::post('/saveSession', [SessionController::class, 'toggleSession']);
+Route::post('/createOrder', [OrderController::class, 'createOrder']);

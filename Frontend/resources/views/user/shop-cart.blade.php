@@ -97,7 +97,7 @@
         <!-- .row end -->
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <a class="btn btn--secondary btn--rounded pull-right" href="#">Checkout</a>
+                <a class="btn btn--secondary btn--rounded pull-right checkout-btn" href="#">Checkout</a>
             </div>
         </div>
     </div>
