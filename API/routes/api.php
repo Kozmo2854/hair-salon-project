@@ -5,7 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReservationsController;
 use App\Http\Controllers\RolesController;
-use App\Http\Controllers\TreatmentsController;
+use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,11 +45,12 @@ Route::patch('/user/{user}', [UsersController::class, 'update']);
 Route::delete('/user/{user}', [UsersController::class, 'destroy']);
 Route::get('/verifyUser', [UsersController::class, 'verifyUser']);
 
-Route::post('/treatment', [TreatmentsController::class, 'store']);
-Route::get('/treatment', [TreatmentsController::class, 'index']);
-Route::get('/treatment/{treatment}', [TreatmentsController::class, 'show']);
-Route::patch('/treatment/{treatment}', [TreatmentsController::class, 'update']);
-Route::delete('/treatment/{treatment}', [TreatmentsController::class, 'destroy']);
+Route::post('/order', [OrdersController::class, 'store']);
+Route::get('/order', [OrdersController::class, 'index']);
+Route::get('/order/{order}', [OrdersController::class, 'show']);
+Route::patch('/order/{order}', [OrdersController::class, 'update']);
+Route::delete('/order/{order}', [OrdersController::class, 'destroy']);
+Route::get('/order/user/{userId}', [OrdersController::class, 'getOrdersByUserId']);
 
 Route::post('/role', [RolesController::class, 'store']);
 Route::get('/role', [RolesController::class, 'index']);
