@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('contact_name')->required();
             $table->string('contact_phone')->required();
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('services')->required();
             $table->string('date')->required();
             $table->text('contact_message');

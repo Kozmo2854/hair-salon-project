@@ -504,11 +504,11 @@
                         <form class="mb-0 contact-form">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-6">
-                                    <input type="text" class="form-control" name="contact-name" id="name"
+                                    <input type="text" class="form-control" name="contact_name" id="name"
                                            placeholder="Your Name" required>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-6">
-                                    <input type="text" class="form-control" name="contact-phone" id="phone"
+                                    <input type="text" class="form-control" name="contact_phone" id="phone"
                                            placeholder="Phone" required>
                                 </div>
 
@@ -516,7 +516,7 @@
                                     <div class="form-select">
                                         <i class="fa fa-angle-down"></i>
                                         <select class="form-control" name="services" id="services" required>
-                                            <option value="2">Select Service</option>
+                                            <option value="">Select Service</option>
                                             <option value="3">Service 1</option>
                                             <option value="4">Service 2</option>
                                             <option value="5">Service 3</option>
@@ -537,7 +537,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <textarea class="form-control" name="contact-message" id="message" rows="3"
+                                    <textarea class="form-control" name="contact_message" id="message" rows="3"
                                               placeholder=
                                               @if(!Session::get('user'))
                                                 "Please login before booking."

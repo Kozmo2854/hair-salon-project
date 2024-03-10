@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingsController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
@@ -57,5 +58,12 @@ Route::get('/role', [RolesController::class, 'index']);
 Route::get('/role/{role}', [RolesController::class, 'show']);
 Route::patch('/role/{role}', [RolesController::class, 'update']);
 Route::delete('/role/{role}', [RolesController::class, 'destroy']);
+
+
+Route::post('/booking', [BookingsController::class, 'store']);
+Route::get('/booking', [BookingsController::class, 'index']);
+Route::get('/booking/{booking}', [BookingsController::class, 'show']);
+Route::patch('/booking/{booking}', [BookingsController::class, 'update']);
+Route::delete('/booking/{booking}', [BookingsController::class, 'destroy']);
 
 Route::get('/login',[LoginController::class,'authenticate']);

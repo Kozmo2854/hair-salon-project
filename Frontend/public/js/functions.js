@@ -618,23 +618,23 @@
                     formDataObject[field.name] = field.value;
                 });
                 submitBookingForm(formDataObject)
-                $('.contact-form')[0].reset()
             }
         })
     })
 
     function submitBookingForm(formDataObject) {
+        console.log(formDataObject);
         $.ajax({
-            type: "GET",
-            url: "http://localhost:90/api/bookings",
+            type: "POST",
+            url: "http://localhost:90/api/booking",
             data: formDataObject,
             headers: {
                 "Origin": "http://localhost:8000",
                 "Host": "localhost:90",
                 "Access-Control-Request-Method": "GET",
             },
-            success: function (userData) {
-                alert('Successfully logged in, you\'ll be redirected to login page')
+            success: function () {
+                alert('Thank you for making an appointment!')
                 $('.contact-form')[0].reset()
             }
         });
