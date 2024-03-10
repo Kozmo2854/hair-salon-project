@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Collection;
 
 class CategoryService
 {
-    public static function getCategories(): Collection
+    public static function getCategoryIdByName($categoryName)
     {
-        return Category::all();
+        return Category::where('title', $categoryName)->first()->id;
     }
 }

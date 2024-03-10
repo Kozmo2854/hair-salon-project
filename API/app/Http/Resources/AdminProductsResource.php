@@ -16,10 +16,11 @@ class AdminProductsResource extends JsonResource
     {
         {
             return [
+                "id" => $this->id,
                 "title" => $this->title,
                 "originalPrice" => $this->originalPrice,
                 "description" => $this->description,
-                "image" => $this->image,
+                "image" => "<img class='product-admin-panel' src='" . $this->image . "' alt='product image'>",
                 "discountedPrice" => $this->discountedPrice,
                 "stock" => $this->stock,
                 "category" => $this->category->title,

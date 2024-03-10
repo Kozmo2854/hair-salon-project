@@ -1,40 +1,26 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
 @include('head')
-<script src="{{ asset('/js/html5shiv.js') }}" defer></script>
-<script src="{{ asset('/js/jquery-2.2.4.min.js') }}" defer></script>
-<script src="{{ asset('/js/plugins.js') }}" defer></script>
-<script src="{{ asset('js/respond.min.js') }}" defer></script>
-<link href="http://cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css" rel="stylesheet">
-<script src="http://cdn.datatables.net/2.0.1/js/dataTables.min.js" type="application/javascript" defer></script>
-<script defer>
-    $('.products-table').DataTable();
-</script>
-<script
+<body>
+{{--<div id="wrapper" class="wrapper clearfix">--}}
 @include('header')
-<div class="products-table-div">
-    <table class="products-table display" style="width:100%">
-        <thead>
-        <tr>
-            @foreach($products[0] as $row => $value)
-                <th>{{$row}}</th>
-            @endforeach
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($products as $product)
-            <tr>
-                @foreach($product as $row => $value)
-                    @if($row=='image')
-                        <td>
-                            <img class="product-admin-panel" src="{{$value}}" alt="productImage"/>
-                        </td>
-                        @continue;
-                    @endif
-                    <td>{{$value}}</td>
-                @endforeach
-            </tr>
-        @endforeach
-        </tbody>
-        <tfoot>
-        </tfoot>
+<div class="container">
+{{--    <img src='http://demo.zytheme.com/hairy/assets/images/shop/grid/4.jpg' alt='product image>'--}}
+
+    <table cellpadding="0" cellspacing="0" border="0" class="dataTable table table-striped" id="example">
+
     </table>
+
 </div>
+<script src="https://code.jquery.com/jquery-3.0.0.js" ></script>
+<script src="https://code.jquery.com/jquery-migrate-3.3.0.js" ></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js" ></script>
+<script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.js" ></script>
+<script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js" ></script>
+<script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.js" ></script>
+<script src="{{ asset('js/dataTables.altEditor.js') }}" defer></script>
+<script src="{{ asset('js/createTable.js')}}" defer></script>
+{{--</div>--}}
+</body>
+</html>

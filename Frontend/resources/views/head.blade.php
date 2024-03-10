@@ -7,6 +7,11 @@
     <meta name="author" content="zytheme" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Rooster is a pixel perfect creative barber html5 tempalte  based on designed with great attention to details, flexibility and performance. It is ultra professional, smooth and sleek, with a clean modern layout.">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.css" />
     <link href="http://demo.zytheme.com/hairy/assets/images/favicon/favicon.png" rel="icon">
 
     <!-- Fonts
@@ -25,8 +30,8 @@
     <script src="{{ asset('/js/html5shiv.js') }}" defer></script>
     <script src="{{ asset('/js/jquery-2.2.4.min.js') }}" defer></script>
     <script src="{{ asset('/js/plugins.js') }}" defer></script>
-    <script src="{{ asset('js/respond.min.js') }}" defer></script>
-    <script src="{{ asset('js/functions.js') }}" defer></script>
+    <script src="{{ asset('/js/respond.min.js') }}" defer></script>
+    <script src="{{ asset('/js/functions.js') }}" defer></script>
     <script src="http://cdn.datatables.net/2.0.1/js/dataTables.min.js" type="application/javascript" defer></script>
     <![endif]-->
 

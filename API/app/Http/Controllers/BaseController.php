@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use Exception;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Blade;
-use Illuminate\View\Component;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 abstract class BaseController extends Controller
 {
@@ -52,9 +49,10 @@ abstract class BaseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,int $id): int
+    public function update(Request $request,int $id): Model|string
     {
-        return $this->modelClass::whereId($id)->update($request->all());
+        $this->modelClass::whereId($id)->update($request->all());
+        return $this->modelClass::findOrFail($id);
     }
 
     /**

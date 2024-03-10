@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SessionController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 Route::post('/saveSession', [SessionController::class, 'toggleSession']);
 Route::get('/getSession', [SessionController::class, 'getSession']);
 Route::post('/createOrder', [OrderController::class, 'createOrder']);
+Route::get('/getAdminOrders', [ProductController::class, 'fetchAdminOrders']);
