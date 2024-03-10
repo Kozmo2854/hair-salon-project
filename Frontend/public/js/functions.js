@@ -389,6 +389,9 @@
         $.ajax({
             type: "GET",
             url: "http://localhost:90/api/product",
+            data: {
+                "user_email": JSON.parse($(".session-data").val())['email']
+            },
             headers: {
                 "Origin": "http://localhost:8000",
                 "Host": "localhost:90",
@@ -408,6 +411,9 @@
         $.ajax({
             type: "GET",
             url: "http://localhost:90/api/product",
+            data: {
+                "user_email": JSON.parse($(".session-data").val())['email']
+            },
             headers: {
                 "Origin": "http://localhost:8000",
                 "Host": "localhost:90",
@@ -423,10 +429,12 @@
 
     $('.pagination a').on('click', function (e) {
         e.preventDefault()
-        console.log('http://localhost:90/api/product?page=' + $(e.target).prop('text'))
         $.ajax({
             type: "GET",
             url: "http://localhost:90/api/product?page=" + $(e.target).prop('text'),
+            data: {
+                "user_email": JSON.parse($(".session-data").val())['email']
+            },
             headers: {
                 "Origin": "http://localhost:8000",
                 "Host": "localhost:90",
@@ -438,6 +446,7 @@
             }
         });
     })
+
     function writeProducts(items) {
         let text = ''
         for (const item of items) {
@@ -479,6 +488,9 @@
             $.ajax({
                 type: "GET",
                 url: "http://localhost:90/api/product/" + itemId,
+                data: {
+                    "user_email": JSON.parse($(".session-data").val())['email']
+                },
                 headers: {
                     "Origin": "http://localhost:8000",
                     "Host": "localhost:90",
@@ -486,13 +498,13 @@
                 },
                 success: function (item) {
                     let itemInCart = currentCart.some(function (e) {
-                        if (e.id==item.id){
+                        if (e.id == item.id) {
                             e.quantity++
                             return true
                         }
                     });
-                    if (itemInCart==[]) {
-                        item.quantity=1
+                    if (itemInCart == []) {
+                        item.quantity = 1
                         currentCart.push(item);
                     }
                     localStorage.setItem("cart", JSON.stringify(currentCart));
@@ -500,6 +512,7 @@
             });
         })
     }
+
     function showCart(cart) {
         let text = ''
         let totalPrice = 0
@@ -525,11 +538,12 @@
             let productId = $(e.target).attr('data-id')
             console.log(productId)
             let cart = JSON.parse(localStorage.getItem('cart'))
-            cart = cart.filter(product => product.id!=productId)
-            localStorage.setItem("cart",JSON.stringify(cart))
+            cart = cart.filter(product => product.id != productId)
+            localStorage.setItem("cart", JSON.stringify(cart))
             showCart(cart)
         })
     }
+
     $('.sign-in').submit(function (e) {
         e.preventDefault()
         $.ajax({
@@ -537,7 +551,8 @@
             url: "http://localhost:90/api/login",
             data: {
                 "email": $('.username').val(),
-                "password": $('.password').val()
+                "password": $('.password').val(),
+                "user_email": $('.username').val(),
             },
             headers: {
                 "Origin": "http://localhost:8000",
@@ -545,11 +560,11 @@
                 "Access-Control-Request-Method": "GET",
             },
             success: function (userData) {
-                if(userData){
+                if (userData) {
                     saveSession(userData)
                     alert('Successfully logged in, you\'ll be redirected to login page')
                     window.location.replace('/')
-                }else{
+                } else {
                     alert('Invalid credentials')
                     $('.sign-in').trigger('reset');
                 }
@@ -567,21 +582,22 @@
                 "email": $('.register-email').val(),
                 "password": $('.register-password').val(),
                 "name": $('.register-name').val(),
-                "lastName": $('.register-last-name').val()
+                "lastName": $('.register-last-name').val(),
+                "user_email": $('.register-email').val()
             },
             headers: {
                 "Origin": "http://localhost:8000",
                 "Host": "localhost:90",
                 "Access-Control-Request-Method": "GET",
             },
-            error:function (xhr, ajaxOptions, thrownError){
+            error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.responseText)
             },
             success: function (userData) {
-                if(userData){
+                if (userData) {
                     alert('Successfully registered, you\'ll be redirected to login page.')
                     window.location.replace('/login')
-                }else{
+                } else {
                     alert('Invalid credentials')
                     $('.register-form').trigger('reset');
                 }
@@ -609,21 +625,21 @@
         e.preventDefault()
         let formDataArray = $('.contact-form').serializeArray()
         let formDataObject = {}
-        $.ajax({
-            type: "GET",
-            url: "http://localhost:8000/api/getSession",
-            success: function (data) {
-                formDataArray.push({ name: "user_id", value: data.id })
-                $.each(formDataArray, function(index, field) {
-                    formDataObject[field.name] = field.value;
-                });
-                submitBookingForm(formDataObject)
-            }
+        formDataArray.push({
+            "name": "user_email",
+            "value": JSON.parse($(".session-data").val())['email']
         })
+        formDataArray.push({
+            "name" : "user_id",
+            "value" : JSON.parse($(".session-data").val())['id']
+        })
+        $.each(formDataArray, function (index, field) {
+            formDataObject[field.name] = field.value;
+        });
+        submitBookingForm(formDataObject)
     })
 
     function submitBookingForm(formDataObject) {
-        console.log(formDataObject);
         $.ajax({
             type: "POST",
             url: "http://localhost:90/api/booking",

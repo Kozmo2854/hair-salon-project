@@ -8,6 +8,7 @@ use App\Http\Controllers\ReservationsController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\UsersController;
+use App\Http\Middleware\LogUserActions;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,50 +21,52 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-Route::post('/product', [ProductController::class, 'store']);
-Route::get('/product', [ProductController::class, 'index']);
-Route::get('/product/{product}', [ProductController::class, 'show']);
-Route::patch('/product/{product}', [ProductController::class, 'update']);
-Route::delete('/product/{product}', [ProductController::class, 'destroy']);
-Route::get('/admin/product',[ProductController::class,'getProductsForAdminPanel']);
+Route::middleware(LogUserActions::class)->group(function () {
+    Route::post('/product', [ProductController::class, 'store']);
+    Route::get('/product', [ProductController::class, 'index']);
+    Route::get('/product/{product}', [ProductController::class, 'show']);
+    Route::patch('/product/{product}', [ProductController::class, 'update']);
+    Route::delete('/product/{product}', [ProductController::class, 'destroy']);
+    Route::get('/admin/product', [ProductController::class, 'getProductsForAdminPanel']);
 
-Route::post('/category', [CategoriesController::class, 'store']);
-Route::get('/category', [CategoriesController::class, 'index']);
-Route::get('/category/{id}', [CategoriesController::class, 'show']);
-Route::patch('/category/{id}', [CategoriesController::class, 'update']);
-Route::delete('/category/{id}', [CategoriesController::class, 'destroy']);
+    Route::post('/category', [CategoriesController::class, 'store']);
+    Route::get('/category', [CategoriesController::class, 'index']);
+    Route::get('/category/{id}', [CategoriesController::class, 'show']);
+    Route::patch('/category/{id}', [CategoriesController::class, 'update']);
+    Route::delete('/category/{id}', [CategoriesController::class, 'destroy']);
 
-Route::post('/reservation', [ReservationsController::class, 'store']);
-Route::get('/reservation', [ReservationsController::class, 'index']);
-Route::get('/reservation/{reservation}', [ReservationsController::class, 'show']);
-Route::patch('/reservation/{reservation}', [ReservationsController::class, 'update']);
-Route::delete('/reservation/{reservation}', [ReservationsController::class, 'destroy']);
+    Route::post('/reservation', [ReservationsController::class, 'store']);
+    Route::get('/reservation', [ReservationsController::class, 'index']);
+    Route::get('/reservation/{reservation}', [ReservationsController::class, 'show']);
+    Route::patch('/reservation/{reservation}', [ReservationsController::class, 'update']);
+    Route::delete('/reservation/{reservation}', [ReservationsController::class, 'destroy']);
 
-Route::post('/user', [UsersController::class, 'store']);
-Route::get('/user', [UsersController::class, 'index']);
-Route::get('/user/{user}', [UsersController::class, 'show']);
-Route::patch('/user/{user}', [UsersController::class, 'update']);
-Route::delete('/user/{user}', [UsersController::class, 'destroy']);
-Route::get('/verifyUser', [UsersController::class, 'verifyUser']);
+    Route::post('/user', [UsersController::class, 'store']);
+    Route::get('/user', [UsersController::class, 'index']);
+    Route::get('/user/{user}', [UsersController::class, 'show']);
+    Route::patch('/user/{user}', [UsersController::class, 'update']);
+    Route::delete('/user/{user}', [UsersController::class, 'destroy']);
+    Route::get('/verifyUser', [UsersController::class, 'verifyUser']);
 
-Route::post('/order', [OrdersController::class, 'store']);
-Route::get('/order', [OrdersController::class, 'index']);
-Route::get('/order/{order}', [OrdersController::class, 'show']);
-Route::patch('/order/{order}', [OrdersController::class, 'update']);
-Route::delete('/order/{order}', [OrdersController::class, 'destroy']);
-Route::get('/order/user/{userId}', [OrdersController::class, 'getOrdersByUserId']);
+    Route::post('/order', [OrdersController::class, 'store']);
+    Route::get('/order', [OrdersController::class, 'index']);
+    Route::get('/order/{order}', [OrdersController::class, 'show']);
+    Route::patch('/order/{order}', [OrdersController::class, 'update']);
+    Route::delete('/order/{order}', [OrdersController::class, 'destroy']);
+    Route::get('/order/user/{userId}', [OrdersController::class, 'getOrdersByUserId']);
 
-Route::post('/role', [RolesController::class, 'store']);
-Route::get('/role', [RolesController::class, 'index']);
-Route::get('/role/{role}', [RolesController::class, 'show']);
-Route::patch('/role/{role}', [RolesController::class, 'update']);
-Route::delete('/role/{role}', [RolesController::class, 'destroy']);
+    Route::post('/role', [RolesController::class, 'store']);
+    Route::get('/role', [RolesController::class, 'index']);
+    Route::get('/role/{role}', [RolesController::class, 'show']);
+    Route::patch('/role/{role}', [RolesController::class, 'update']);
+    Route::delete('/role/{role}', [RolesController::class, 'destroy']);
 
 
-Route::post('/booking', [BookingsController::class, 'store']);
-Route::get('/booking', [BookingsController::class, 'index']);
-Route::get('/booking/{booking}', [BookingsController::class, 'show']);
-Route::patch('/booking/{booking}', [BookingsController::class, 'update']);
-Route::delete('/booking/{booking}', [BookingsController::class, 'destroy']);
+    Route::post('/booking', [BookingsController::class, 'store']);
+    Route::get('/booking', [BookingsController::class, 'index']);
+    Route::get('/booking/{booking}', [BookingsController::class, 'show']);
+    Route::patch('/booking/{booking}', [BookingsController::class, 'update']);
+    Route::delete('/booking/{booking}', [BookingsController::class, 'destroy']);
 
-Route::get('/login',[LoginController::class,'authenticate']);
+    Route::get('/login', [LoginController::class, 'authenticate']);
+});

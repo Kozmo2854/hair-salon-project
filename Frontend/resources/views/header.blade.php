@@ -1,8 +1,8 @@
 @php
-    use App\Services\UserService;
     use Illuminate\Support\Facades\Session;
+    $userData = !empty(Session::get('user')) ? json_encode(Session::get('user')['userData']) : '';
 @endphp
-{{--@dd(Session::get('user'))--}}
+<input value="{{$userData}}" class="session-data" hidden="">
 <header id="navbar-spy" class="header header-topbar header-transparent header-fixed">
     <div id="top-bar" class="top-bar">
         <div class="container">
@@ -22,11 +22,11 @@
                         @if(!empty(Session::get('user')))
                             <span class="top--login"><a href="#" class="lnr lnr-exit"></a>
                         @endif
-                        @if(empty(Session::get('user')))
-                            <a href="/login">Login</a> / <a href="/register">Register</a>
-                        @endif
+                                @if(empty(Session::get('user')))
+                                    <a href="/login">Login</a> / <a href="/register">Register</a>
+                                @endif
                         </span>
-                        <span class="top--social">
+                            <span class="top--social">
 						<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
 						<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
 						<a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
@@ -82,9 +82,9 @@
                         <!-- li end -->
                         <!-- Admin panel -->
                         @if( isset(Session::get('user')['userData']) && Session::get('user')['userData']['role_id']==1)
-                        <li class="has-dropdown">
-                            <a href="/admin/home">Admin Panel</a>
-                        </li>
+                            <li class="has-dropdown">
+                                <a href="/admin/home">Admin Panel</a>
+                            </li>
                         @endif
                         <!-- li end -->
                     </ul>
