@@ -79,8 +79,8 @@ $(document).ready(function () {
         onAddRow: function (datatable, rowdata, success, error) {
             $.ajax({
                 // a tipycal url would be / with type='PUT'
-                url: url_ws_mock_ok,
-                type: 'GET',
+                url: "http://localhost:90/api/product",
+                type: 'POST',
                 data: rowdata,
                 success: success,
                 error: error
