@@ -33,9 +33,7 @@
                             <div class="slide--headline">We Will Make You Stylish</div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 text--center">
-                            <div class="slide--bio">Preparing your money is a daunting challenge for today's investors
-                                and will give you a complete account of the system.
-                            </div>
+                            <div class="slide--bio">Our salon provides top-notch haircuts and grooming services to make you look stylish and confident.</div>
                             <div class="slide-action">
                                 <a class="btn btn--primary btn--rounded" href="#">Read More </a>
                             </div>
@@ -60,10 +58,7 @@
                             <div class="slide--headline">We make amazing haircuts</div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 text--center">
-                            <div class="slide--bio">Preparing your money is a daunting challenge for today's investors
-                                and will give you a complete account of the system.
-                            </div>
-                            <div class="slide-action">
+                            <div class="slide--bio">Our expert stylists are dedicated to providing you with amazing haircuts that match your style and personality.</div>                            <div class="slide-action">
                                 <a class="btn btn--secondary btn--white btn--rounded mr-10" href="#">Read More </a>
                                 <a class="btn btn--white btn--bordered btn--rounded" href="#">Get Started</a>
                             </div>
@@ -88,10 +83,7 @@
                             <div class="slide--headline">our clients trust us</div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 text--center">
-                            <div class="slide--bio">Preparing your money is a daunting challenge for today's investors
-                                and will give you a complete account of the system.
-                            </div>
-                            <div class="slide-action">
+                            <div class="slide--bio">Our top priority is client satisfaction. We ensure that every visit to our salon leaves you feeling pampered and delighted.</div>                            <div class="slide-action">
                                 <a class="btn btn--secondary btn--white btn--rounded mr-10" href="#">Read More </a>
                                 <a class="btn btn--white btn--bordered btn--rounded" href="#">Get Started</a>
                             </div>
@@ -114,8 +106,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
                     <div class="heading text--center mb-80">
                         <h2 class="heading--title">What We Do?</h2>
-                        <p class="heading--desc">Duis aute irure dolor in reprehenderit volupte velit esse cillum dolore
-                            eu fugiat pariatursint occaecat cupidatat non proident culpa.</p>
+                        <p class="heading--desc">We offer a wide range of services to cater to your grooming needs. Our expert stylists ensure that you receive top-quality service every time.</p>
                         <div class="divider--line"></div>
                     </div>
                 </div>
@@ -130,7 +121,7 @@
                             <img src="http://demo.zytheme.com/hairy/assets/images/services/1.jpg" alt="img">
                         </div>
                         <h3>Haircut Styles</h3>
-                        <p>Duis aute irure dolor in reprehenderit in volupte velit esse cillum dolore fugiat nulla.</p>
+                        <p>Choose from a variety of haircut styles crafted by our experienced stylists.</p>
                     </div>
                     <!-- .container end -->
                 </div>
@@ -143,7 +134,7 @@
                             <img src="http://demo.zytheme.com/hairy/assets/images/services/2.jpg" alt="img">
                         </div>
                         <h3>Beard Trim</h3>
-                        <p>Duis aute irure dolor in reprehenderit in volupte velit esse cillum dolore fugiat nulla.</p>
+                        <p>Keep your beard neat and stylish with our expert beard trimming services.</p>
                     </div>
                     <!-- .container end -->
                 </div>
@@ -156,7 +147,7 @@
                             <img src="http://demo.zytheme.com/hairy/assets/images/services/3.jpg" alt="img">
                         </div>
                         <h3>Hot Shave</h3>
-                        <p>Duis aute irure dolor in reprehenderit in volupte velit esse cillum dolore fugiat nulla.</p>
+                        <p>Experience the luxury of a traditional hot shave that leaves your skin smooth and refreshed.</p>
                     </div>
                     <!-- .container end -->
                 </div>
@@ -179,8 +170,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
                     <div class="heading text--center mb-80">
                         <h2 class="heading--title text-white">Working Hours</h2>
-                        <p class="heading--desc text-white">Duis aute irure dolor in reprehenderit volupte velit esse
-                            cillum dolore eu fugiat pariatursint occaecat cupidatat non proident culpa.</p>
+                        <p class="heading--desc text-white">We are open seven days a week to accommodate your busy schedule. Visit us during our working hours and experience our exceptional service.</p>
                         <div class="divider--line"></div>
                     </div>
                 </div>
@@ -287,8 +277,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
                     <div class="heading text--center mb-70">
                         <h2 class="heading--title">Our Pricing</h2>
-                        <p class="heading--desc">Duis aute irure dolor in reprehenderit volupte velit esse cillum dolore
-                            eu fugiat pariatursint occaecat cupidatat non proident culpa.</p>
+                        <p class="heading--desc">We offer competitive pricing for all our services. Check out our pricing options and choose the one that suits you best.</p>
                         <div class="divider--line"></div>
                     </div>
                 </div>
@@ -368,8 +357,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
                     <div class="text--center heading mb-100">
                         <h2 class="heading--title color-white">Clients Say</h2>
-                        <p class="heading--desc mb-0 color-gray">Duis aute irure dolor in reprehenderit volupte velit
-                            esse cillum dolore eu fugiat pariatursint occaecat cupidatat non proident culpa.</p>
+                        <p class="heading--desc mb-0 color-gray">See what our customers have to say about our services.</p>
                         <div class="divider--line divider--center"></div>
                     </div>
                 </div>
@@ -377,13 +365,6 @@
             </div>
             <!-- .row end -->
         </div>
-        <!-- .container end -->
-    </section>
-    <!-- #testimonial2 end -->
-
-    <!-- Testimonial #3
-    ============================================= -->
-    <section id="testimonial2" class="testimonial testimonial-1  testimonial-3 text-center bg-gray pt-0">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -400,8 +381,7 @@
                             </div>
                             <!-- .testimonial-meta end -->
                             <div class="testimonial--body">
-                                <p>“Proin gravida nibh vel velit auctor aliquet aenean sollidin, lorem quis bibendum
-                                    auctor nisi elit.”</p>
+                                <p>I've been a loyal customer for years, and I'm always impressed by the professionalism and skill of the staff. Highly recommend!</p>
                             </div>
                             <!-- .testimonial-body end -->
                             <div class="testimonial--meta-content">
@@ -420,8 +400,7 @@
                             </div>
                             <!-- .testimonial-meta end -->
                             <div class="testimonial--body">
-                                <p>“Proin gravida nibh vel velit auctor aliquet aenean sollidin, lorem quis bibendum
-                                    auctor nisi elit.”</p>
+                                <p>I have been coming to this salon for years, and I'm always impressed with the quality of service. The stylists are skilled and friendly, and I always leave feeling great about my haircut.</p>
                             </div>
                             <!-- .testimonial-body end -->
                             <div class="testimonial--meta-content">
@@ -440,8 +419,7 @@
                             </div>
                             <!-- .testimonial-meta end -->
                             <div class="testimonial--body">
-                                <p>“Proin gravida nibh vel velit auctor aliquet aenean sollidin, lorem quis bibendum
-                                    auctor nisi elit.”</p>
+                                <p>I recently tried their hot shave service, and it was an amazing experience. The barber was very skilled and made sure I was comfortable throughout the process. I highly recommend it to anyone looking for a relaxing grooming session.</p>
                             </div>
                             <!-- .testimonial-body end -->
                             <div class="testimonial--meta-content">
@@ -460,8 +438,7 @@
                             </div>
                             <!-- .testimonial-meta end -->
                             <div class="testimonial--body">
-                                <p>“Proin gravida nibh vel velit auctor aliquet aenean sollidin, lorem quis bibendum
-                                    auctor nisi elit.”</p>
+                                <p>I love the ambiance of this salon. It's very clean and modern, and the staff is always welcoming. I've tried several services here, and I've never been disappointed. Keep up the good work!</p>
                             </div>
                             <!-- .testimonial-body end -->
                             <div class="testimonial--meta-content">
@@ -489,9 +466,8 @@
             <div class="row clearfix">
                 <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
                     <div class="heading heading-2 mb-80 text--center">
-                        <h2 class="heading--title text-white">Book Online</h2>
-                        <p class="heading--desc text-white">Duis aute irure dolor in reprehenderit volupte velit esse
-                            cillum dolore eu fugiat pariatursint occaecat cupidatat non proident culpa.</p>
+                        <h2 class="heading--title text-white">Book Your Appointment Today</h2>
+                        <p class="heading--desc text-white">Give yourself a treat and experience our exceptional grooming services. Book your appointment now!</p>
                         <div class="divider--line"></div>
                     </div>
                 </div>

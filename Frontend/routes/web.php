@@ -43,6 +43,10 @@ Route::get('/login', function () {
     return view('user.login');
 });
 
+Route::get('/about', function () {
+    return view('user.page-about-us');
+});
+
 Route::get('/forbidden', function () {
     return view('user.forbidden');
 });

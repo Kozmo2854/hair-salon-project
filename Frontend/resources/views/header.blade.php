@@ -1,6 +1,6 @@
 @php
     use Illuminate\Support\Facades\Session;
-    $userData = !empty(Session::get('user')) ? json_encode(Session::get('user')['userData']) : '';
+    $userData = !empty(Session::get('user')) ? json_encode(Session::get('user')['userData']) : '{}';
 @endphp
 <input value="{{$userData}}" class="session-data" hidden="">
 <header id="navbar-spy" class="header header-topbar header-transparent header-fixed">
@@ -73,6 +73,11 @@
                         <!-- view Orders -->
                         <li class="has-dropdown">
                             <a href="/orders">View Orders</a>
+                        </li>
+                        <!-- li end -->
+                        <!-- view Orders -->
+                        <li class="has-dropdown">
+                            <a href="/about">About</a>
                         </li>
                         <!-- li end -->
                         <!-- Admin panel -->
