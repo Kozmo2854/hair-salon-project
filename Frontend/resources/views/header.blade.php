@@ -65,11 +65,6 @@
                             <a href="/">home</a>
                         </li>
                         <!-- li end -->
-                        <!-- Gallery Menu-->
-                        <li class="has-dropdown">
-                            <a href="gallery-3cols.html">Gallery</a>
-                        </li>
-                        <!-- li end -->
                         <!-- shop Menu -->
                         <li class="has-dropdown">
                             <a href="/shop">shop</a>
@@ -86,6 +81,11 @@
                                 <a href="/admin/home">Admin Panel</a>
                             </li>
                         @endif
+                        <!-- li end -->
+                        <!-- Gallery Menu-->
+                        <li class="has-dropdown">
+                            <a href="{{asset("Php2_Dokumentacija.pdf")}}" target="_blank">Docs</a>
+                        </li>
                         <!-- li end -->
                     </ul>
                     <!-- Module Cart -->

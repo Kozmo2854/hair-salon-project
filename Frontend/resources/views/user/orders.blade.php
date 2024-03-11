@@ -26,7 +26,7 @@
                     @if($row=='Products')
                         <td>
                             @foreach(json_decode($value) as $product)
-                                <img class="product-admin-panel" src="{{$product->image}}" alt="productImage"/>
+                                <img class="product-orders-panel" src="{{$product->image}}" alt="productImage"/>
                             @endforeach
                         </td>
                         @continue;
