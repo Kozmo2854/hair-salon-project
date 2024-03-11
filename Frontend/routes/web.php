@@ -12,7 +12,7 @@
 |
 */
 
-use App\Http\Middleware\PreventUserAccess;
+use App\Http\Middleware\PreventNonAuthorizedAccess;
 use App\Services\CategoryService;
 use App\Services\ProductService;
 use Illuminate\Support\Facades\Http;
@@ -24,17 +24,6 @@ Route::get('/', function () {
     return view('user.index');
 });
 
-Route::get('/shop', function () {
-    $productData = ProductService::getProducts();
-    return view('user.shop', [
-        'categoriesNames' => CategoryService::getCategories(),
-        'products' => $productData['data'],
-        'numberOfPages' => $productData['total'] / 9
-    ]);
-});
-Route::get('/cart', function () {
-    return view('user.shop-cart');
-});
 Route::get('/register', function () {
     return view('user.register');
 });
@@ -51,21 +40,34 @@ Route::get('/forbidden', function () {
     return view('user.forbidden');
 });
 
-Route::get('/orders', function () {
-    $userId = Session::get('user')['userData']['id'];
-    $orders = json_decode(Http::get('http://hairsaloon.api/api/order/user/' . $userId)->body());
-    return view('user.orders', [
-        'orders' => $orders->data,
-    ]);
-});
 
-Route::prefix('/admin')->middleware(PreventUserAccess::class)->group(function () {
-    Route::get('/home', function () {
-        return view('admin/home', [
-            'products' => ProductService::getAdminProducts()['data']
+Route::middleware(PreventNonAuthorizedAccess::class)->group(function () {
+    Route::get('/shop', function () {
+        $productData = ProductService::getProducts();
+        return view('user.shop', [
+            'categoriesNames' => CategoryService::getCategories(),
+            'products' => $productData['data'],
+            'numberOfPages' => $productData['total'] / 9
         ]);
     });
-    Route::get('/logs', function () {
-        return view('admin/logs');
+    Route::get('/orders', function () {
+        $userId = Session::get('user')['userData']['id'];
+        $orders = json_decode(Http::get('http://hairsaloon.api/api/order/user/' . $userId)->body());
+        return view('user.orders', [
+            'orders' => $orders->data,
+        ]);
+    });
+    Route::get('/cart', function () {
+        return view('user.shop-cart');
+    });
+    Route::group(['prefix' => 'admin'],function (){
+        Route::get('/home', function () {
+            return view('admin/home', [
+                'products' => ProductService::getAdminProducts()['data']
+            ]);
+        });
+        Route::get('/logs', function () {
+            return view('admin/logs');
+        });
     });
 });

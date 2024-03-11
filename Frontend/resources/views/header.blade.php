@@ -92,7 +92,7 @@
                         <!-- li end -->
                         <!-- Gallery Menu-->
                         <li class="has-dropdown">
-                            <a href="{{asset("Php2_Dokumentacija.pdf")}}" target="_blank">Docs</a>
+                            <a href="{{asset("PHP2_Dokumentacija.pdf")}}" target="_blank">Docs</a>
                         </li>
                         <!-- li end -->
                     </ul>

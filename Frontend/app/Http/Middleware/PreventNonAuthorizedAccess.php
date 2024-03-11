@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\Response;
 
-class PreventUserAccess
+class PreventNonAuthorizedAccess
 {
     /**
      * Handle an incoming request.
@@ -18,9 +18,12 @@ class PreventUserAccess
     public function handle(Request $request, Closure $next): Response|View
     {
         $user = Session::get('user');
-        if(empty($user) || $user['userData']['role_id']!=1){
+        if (empty($user)) {
             return redirect('/forbidden');
         }
-        return $next($request);
+        if (strpos($request->getPathInfo(), '/admin') !== false && $user['userData']['role_id'] != 1){
+            return redirect('/forbidden');
+        }
+            return $next($request);
     }
 }

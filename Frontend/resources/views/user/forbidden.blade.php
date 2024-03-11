@@ -1,5 +1,10 @@
-<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Frijole|Josefin+Sans:300,400,400i,600,700|Viga" rel="stylesheet">
+@php use Illuminate\Support\Facades\Session; @endphp
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Frijole|Josefin+Sans:300,400,400i,600,700|Viga"
+      rel="stylesheet">
 <link href="{{ asset('/css/forbidden.css') }}" rel="stylesheet">
+@php
+    $user = Session::get('user');
+@endphp
 
 
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -9,8 +14,6 @@
 
   <g>
       <g class="st6">
-
-
 
 
           <g>
@@ -74,9 +77,6 @@
           </g>
 
 
-
-
-
           <!-- body shadow   -->
           <path class="st8" d="M176.7,166.3c-5,2.6-10,4.3-15.2,5.3c-7.1,1.4-14.3,1.8-21.5,1.5c-8.2-0.3-16.2-1.3-24.1-3.7
                            c-9.3-2.9-17.6-7.5-24.5-14.5c-0.6-0.6-1.2-1.2-1.7-1.8c-0.8-1-1-2.1-0.4-3.2c0.5-1.1,1.6-1.2,2.7-1.1
@@ -88,7 +88,6 @@
                            c-0.9,10.8,0.4,21.3,4.8,31.3c0.7,1.6,0.4,2.9-0.8,3.7c-1.3,0.9-2.8,0.6-3.4-0.9c-0.3-0.8-0.8-1-1.6-0.9
                            c-7.1,0.5-14.2,1-21.3,1.6c-5.2,0.4-10.4,0.8-15.5,1.1c-0.8,0.1-1.5,0.1-1.7,1.2c-0.2,1-1.7,1.7-2.7,1.6c-1.2-0.1-1.8-0.9-2-2.1
                            c-1.7-9.7-3.1-19.3-3.2-29.2c-0.1-9.7,1.6-19,4.5-28.1c2.8-8.7,5.6-17.5,8.4-26.2C176,169,176.3,167.8,176.7,166.3z"/>
-
 
 
           <!--  tongue shadow  -->
@@ -108,8 +107,6 @@
           </g>
 
 
-
-
           <!--  hands shadow   -->
           <path class="st8" d="M269.4,214.4c-1.8,1.9-3.5,3.8-5.3,5.6c-0.6,0.7-1.3,1.3-2,1.9c-1.4,1.3-3,1.2-4.1-0.4
                            c-1.4-2-2.6-4-3.9-6.1c-0.7-1.2-1.4-2.5-2.1-3.8c-1.8,1.1-3.5,2.2-5.3,3.1c-1.8,0.9-3.7,1.7-5.6,2.4c-2.3,0.8-3.5-0.1-3.8-2.4
@@ -124,7 +121,6 @@
 
 
       <g>
-
 
 
           <!--  teeth   -->
@@ -182,9 +178,6 @@
           </g>
 
 
-
-
-
           <!-- tongue  -->
           <g>
               <path class="st10 tongue" d="M175.4,109.7c-5.7,4.1-13.5,0.8-18.1-3.2c-8.6-7.3-17.6-13.5-29.7-13.2c-5.9,0.3-10,3.2-15.1,5.4
@@ -206,11 +199,6 @@
                                      c0.4,0.1,0.9,0.1,1.3,0.2c0.8,0.1,1.6,0.1,2.3,0.1c0.7,0,1.4,0,2,0c1.2,0,2.2-0.1,2.8-0.1
                                      C175.3,115.4,175.7,115.3,175.7,115.3z"/>
           </g>
-
-
-
-
-
 
 
           <g>
@@ -1158,7 +1146,8 @@
                   </g>
                   <g>
                       <g>
-                          <path class="st9" d="M125.4,29.6c3.9,0,3.9-6.1,0-6.1C121.5,23.5,121.5,29.6,125.4,29.6L125.4,29.6z"/>
+                          <path class="st9"
+                                d="M125.4,29.6c3.9,0,3.9-6.1,0-6.1C121.5,23.5,121.5,29.6,125.4,29.6L125.4,29.6z"/>
                       </g>
                   </g>
               </g>
@@ -1209,7 +1198,8 @@
                                                                                            HRrhW7whuhWmuQjWYlj7uvv+gGvjV8r82+61orfqaZC5KHUphLvKvhU9j70Bt4hfKe03Yl7zZqml
                                                                                            bLgK3JoCS6mfG6y9bi17xQ+4JoKl1N+NvvXu0KUsPAu8FKVuZiLsGp8rlr7AOy2FSyVwQ+NzZS5+
                                                                                            W+LUrdzP/UwhBC6dAJeCWNZOfZdGqVuYDgUP+MggDiuWzDcL4Jo/I3rAZ02Hq8N3y2CJHvArxhAA
-                                                                                           AJL/CzAAVzO9MLNesgEAAAAASUVORK5CYII=" transform="matrix(1 0 0 1 -2.1111 200.7407)">
+                                                                                           AJL/CzAAVzO9MLNesgEAAAAASUVORK5CYII="
+                       transform="matrix(1 0 0 1 -2.1111 200.7407)">
                 </image>
                 <g>
                     <rect x="5.9" y="208.8" class="st9" width="290" height="180"/>
@@ -1229,15 +1219,23 @@
                 <text transform="matrix(1 0 0 1 85.4612 263.0171)" class="st9 st20 st21">404 error</text>
             </g>
             <rect x="44.7" y="322.3" class="st22" width="212.1" height="34.4"/>
-            <text transform="matrix(1 0 0 1 47.2058 329.1734)" class="st4"><tspan x="0" y="0" class="st23 st24 st25">Lorem ipsum dolor sit amet, consectetur adipiscing </tspan><tspan x="0.6" y="11.7" class="st23 st24 st25">elit, sed do eiusmod tempor incididunt ut labore et </tspan><tspan x="6.2" y="23.3" class="st23 st24 st25">dolore magna aliqua. Ut enim ad minim veniam.</tspan></text>
+            <text transform="matrix(1 0 0 1 47.2058 329.1734)" class="st4">
+                <tspan x="0" y="0" class="st23 st24 st25">Lorem ipsum dolor sit amet, consectetur adipiscing</tspan>
+                <tspan x="0.6" y="11.7" class="st23 st24 st25">elit, sed do eiusmod tempor incididunt ut labore et
+                </tspan>
+                <tspan x="6.2" y="23.3" class="st23 st24 st25">dolore magna aliqua. Ut enim ad minim veniam.</tspan>
+            </text>
             <g class="st4">
                 <path class="st10" d="M277,301.4c0,4.3-3.5,7.8-7.8,7.8H32.1c-4.3,0-7.8-3.5-7.8-7.8v-6.5c0-4.3,3.5-7.8,7.8-7.8h237.1
                               c4.3,0,7.8,3.5,7.8,7.8V301.4z"/>
                 <rect x="34.4" y="292" class="st19" width="232.6" height="18.4"/>
-                <text transform="matrix(1 0 0 1 45.1999 303.7364)" class="st9 st26 st27">sorry, the page not found</text>
+                <text transform="matrix(1 0 0 1 45.1999 303.7364)" class="st9 st26 st27">sorry, the page not found
+                </text>
             </g>
             <rect x="93" y="363.5" class="st22" width="115.4" height="12.3"/>
-            <text transform="matrix(1 0 0 1 102.8845 371.104)" class="st28 st29 st30" style="text-decoration: underline;">click to homepage</text>
+            <text transform="matrix(1 0 0 1 102.8845 371.104)" class="st28 st29 st30"
+                  style="text-decoration: underline;">click to homepage
+            </text>
         </g>
     </g>
     <g>
@@ -1412,17 +1410,40 @@
 
             </g>
         </g>
-        <text opacity="0.6" x="15" y="257" fill="#000" font-family="Viga" font-size="25">There is no way Immma
-            <tspan x="35" y="292" >let you pass through!</tspan>
-            <tspan x="100" y="357" fill="#000" font-size="65">403</tspan>
-            <tspan x="93" y="381.2" fill="#000" font-size="15">Access Forbidden.</tspan>
-        </text>
+        @php
+            if(empty($user)){
 
-        <text x="15" y="255" fill="#6BA184" font-family="Viga" font-size="25">There is no way Immma
-            <tspan x="35" y="290" >let you pass through!</tspan>
-            <tspan x="100" y="355" fill="#BF3E73" font-size="65">403</tspan>
-            <tspan x="93" y="380" fill="#6BA184" font-size="15">Access Forbidden.</tspan>
-        </text>
+            }else{
+
+            }
+        @endphp
+        @if(empty($user))
+            <text opacity="0.6" x="15" y="257" fill="#000" font-family="Viga" font-size="25">There is no way Immma
+                <tspan x="35" y="292">let you pass through!</tspan>
+                <tspan x="100" y="357" fill="#000" font-size="65">403</tspan>
+                <tspan x="93" y="381.2" fill="#000" font-size="15">Login First!</tspan>
+            </text>
+
+            <text x="15" y="255" fill="#6BA184" font-family="Viga" font-size="25">There is no way Immma
+                <tspan x="35" y="290">let you pass through!</tspan>
+                <tspan x="100" y="355" fill="#BF3E73" font-size="65">403</tspan>
+                <tspan x="93" y="380" fill="#6BA184" font-size="15">Login First!</tspan>
+            </text>
+
+        @else
+            <text opacity="0.6" x="15" y="257" fill="#000" font-family="Viga" font-size="25">There is no way Immma
+                <tspan x="35" y="292">let you pass through!</tspan>
+                <tspan x="100" y="357" fill="#000" font-size="65">403</tspan>
+                <tspan x="93" y="381.2" fill="#000" font-size="15">Access Forbidden.</tspan>
+            </text>
+
+            <text x="15" y="255" fill="#6BA184" font-family="Viga" font-size="25">There is no way Immma
+                <tspan x="35" y="290">let you pass through!</tspan>
+                <tspan x="100" y="355" fill="#BF3E73" font-size="65">403</tspan>
+                <tspan x="93" y="380" fill="#6BA184" font-size="15">Access Forbidden.</tspan>
+            </text>
+
+        @endif
     </g>
     </g>
     </g>

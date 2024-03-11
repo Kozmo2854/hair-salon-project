@@ -97,6 +97,34 @@ class ProductSeeder extends Seeder
                 'stock' => 3,
                 'category_id' => 3,
             ],
+
+            [
+                'title' => 'Hairdresser scissors',
+                'originalPrice' => 56,
+                'description' => 'High-quality scissors for creating a rich lather and a smooth haircut.',
+                'image' => 'http://demo.zytheme.com/hairy/assets/images/shop/grid/1.jpg',
+                'discountedPrice' => 10,
+                'stock' => 2,
+                'category_id' => 1,
+            ],
+            [
+                'title' => 'Hair Comb',
+                'originalPrice' => 37,
+                'description' => 'Luxurious hair comb which will keep your hair slick.',
+                'image' => 'http://demo.zytheme.com/hairy/assets/images/shop/grid/2.jpg',
+                'discountedPrice' => 10,
+                'stock' => 3,
+                'category_id' => 2,
+            ],
+            [
+                'title' => 'Hair clipper',
+                'originalPrice' => 84,
+                'description' => 'Unleash salon-quality haircuts at home with our premium hair clipper!',
+                'image' => 'http://demo.zytheme.com/hairy/assets/images/shop/grid/3.jpg',
+                'discountedPrice' => 10,
+                'stock' => 3,
+                'category_id' => 3,
+            ],
         ];
 
         foreach ($data as $productData) {
