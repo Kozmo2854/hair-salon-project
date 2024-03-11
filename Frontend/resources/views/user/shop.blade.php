@@ -83,105 +83,12 @@
                                         <a href="#" class="category-filter"  data-value="{{$category->id}}">{{$category->title}}</a>
                                     </li>
                                 @endforeach
+                                    <li>
+                                        <a href="#" class="category-reset">Reset filter</a>
+                                    </li>
                             </ul>
                         </div>
                     </div>
-                    <!-- .widget-categories end -->
-{{--                    <!-- Best Sellers--}}
-{{--                    ============================================= -->--}}
-{{--                    <div class="widget widget-recent-products">--}}
-{{--                        <div class="widget--title">--}}
-{{--                            <h5>Best Sellers</h5>--}}
-{{--                        </div>--}}
-{{--                        <div class="widget--content">--}}
-{{--                            <!-- Product #1 -->--}}
-{{--                            <div class="product clearfix">--}}
-{{--                                <a href="#">--}}
-{{--                                    <img src="http://demo.zytheme.com/hairy/assets/images/shop/thumb/1.jpg"--}}
-{{--                                         alt="product"/>--}}
-{{--                                </a>--}}
-{{--                                <div class="product-desc">--}}
-{{--                                    <div class="product-title">--}}
-{{--                                        <a href="#">Gel Cream</a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="product-meta">--}}
-{{--                                        <span>$7.52</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <!-- .recent-product end -->--}}
-
-{{--                            <!-- Product #2 -->--}}
-{{--                            <div class="product clearfix">--}}
-{{--                                <a href="#">--}}
-{{--                                    <img src="http://demo.zytheme.com/hairy/assets/images/shop/thumb/2.jpg"--}}
-{{--                                         alt="product"/>--}}
-{{--                                </a>--}}
-{{--                                <div class="product-desc">--}}
-{{--                                    <div class="product-title">--}}
-{{--                                        <a href="#">Hair Dryer</a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="product-meta">--}}
-{{--                                        <span>$35.00</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <!-- .recent-product end -->--}}
-
-{{--                            <!-- Product #3 -->--}}
-{{--                            <div class="product clearfix">--}}
-{{--                                <a href="#">--}}
-{{--                                    <img src="http://demo.zytheme.com/hairy/assets/images/shop/thumb/3.jpg"--}}
-{{--                                         alt="product"/>--}}
-{{--                                </a>--}}
-{{--                                <div class="product-desc">--}}
-{{--                                    <div class="product-title">--}}
-{{--                                        <a href="#">Hair Brush</a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="product-meta">--}}
-{{--                                        <span>$23.00</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <!-- .recent-product end -->--}}
-{{--                        </div>--}}
-
-{{--                    </div>--}}
-{{--                    <!-- .widget-recent end -->--}}
-
-{{--                    <!-- Filter--}}
-{{--                    ============================================= -->--}}
-{{--                    <div class="widget widget-filter">--}}
-{{--                        <div class="widget--title">--}}
-{{--                            <h5>Pricing Filter</h5>--}}
-{{--                        </div>--}}
-{{--                        <div class="widget--content">--}}
-{{--                            <div id="slider-range"></div>--}}
-{{--                            <p>--}}
-{{--                                <input type="text" id="amount" readonly>--}}
-{{--                                <a class="btn btn--secondary btn--bordered btn--rounded" href="#">Filter</a>--}}
-{{--                            </p>--}}
-
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <!-- .widget-filter end -->--}}
-
-{{--                    <!-- Tag Clouds--}}
-{{--                    ============================================= -->--}}
-{{--                    <div class="widget widget-tags">--}}
-{{--                        <div class="widget--title">--}}
-{{--                            <h5>tag clouds</h5>--}}
-{{--                        </div>--}}
-{{--                        <div class="widget--content">--}}
-{{--                            <a href="#">Hairstyle</a>--}}
-{{--                            <a href="#">Shave</a>--}}
-{{--                            <a href="#">Clipper</a>--}}
-{{--                            <a href="#">Trim</a>--}}
-{{--                            <a href="#">Cream</a>--}}
-{{--                            <a href="#">Razor</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <!-- .widget-tags end -->--}}
                 </div>
                 <!-- .col-md-3 end -->
                 <div class="col-xs-12 col-sm-12 col-md-9">

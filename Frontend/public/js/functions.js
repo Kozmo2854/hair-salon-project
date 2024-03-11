@@ -403,6 +403,23 @@
         });
     })
 
+    $('.category-reset').on('click', function (e) {
+        e.preventDefault()
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:90/api/product",
+            headers: {
+                "UserEmail" : JSON.parse($(".session-data").val())['email'],
+                "Origin": "http://localhost:8000",
+                "Host": "localhost:90",
+                "Access-Control-Request-Method": "GET",
+            },
+            success: function (items) {
+                writeProducts(items)
+            }
+        });
+    })
+
     $('.search-filter').on('input', function (e) {
         e.preventDefault();
 
