@@ -87,14 +87,16 @@ $(document).ready(function () {
             });
         },
         onDeleteRow: function (datatable, rowdata, success, error) {
-            $.ajax({
-                // a tipycal url would be /{id} with type='DELETE'
-                url: url_ws_mock_ok,
-                type: 'GET',
-                data: rowdata,
-                success: success,
-                error: error
-            });
+            for (const row of rowdata) {
+                $.ajax({
+                    // a tipycal url would be /{id} with type='DELETE'
+                    url: "http://localhost:90/api/product/" + row.id,
+                    type: 'DELETE',
+                    data: rowdata,
+                    success: success,
+                    error: error
+                });
+            }
         },
         onEditRow: function (datatable, rowdata, success, error) {
             $.ajax({
