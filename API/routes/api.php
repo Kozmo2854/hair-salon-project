@@ -9,6 +9,7 @@ use App\Http\Controllers\RolesController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\UsersController;
 use App\Http\Middleware\LogUserActions;
+use App\Services\UserActionsService;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,4 +70,9 @@ Route::middleware(LogUserActions::class)->group(function () {
     Route::delete('/booking/{booking}', [BookingsController::class, 'destroy']);
 
     Route::get('/login', [LoginController::class, 'authenticate']);
+    Route::get('/logs', function(){
+       return json_encode([
+           'data' => UserActionsService::getAll()
+       ]);
+    });
 });

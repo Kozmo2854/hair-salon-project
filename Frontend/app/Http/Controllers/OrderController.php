@@ -15,6 +15,9 @@ class OrderController extends Controller
             'products' => json_encode($request->get('items')),
             'total_price' => $request->get('subtotal')
         ];
-        return Http::post('http://hairsaloon.api/api/order',$requestBody)->status();
+
+        $userEmail = !empty(Session::get('user')) ? Session::get('user')['userData']['email'] : '';
+        return Http::withHeader('UserEmail', $userEmail)
+            ->post('http://hairsaloon.api/api/order',$requestBody)->status();
     }
 }

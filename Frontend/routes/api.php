@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LogsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SessionController;
@@ -21,3 +22,4 @@ Route::post('/saveSession', [SessionController::class, 'toggleSession']);
 Route::get('/getSession', [SessionController::class, 'getSession']);
 Route::post('/createOrder', [OrderController::class, 'createOrder']);
 Route::get('/getAdminOrders', [ProductController::class, 'fetchAdminOrders']);
+Route::get('/getLogs', [LogsController::class, 'getLogs']);

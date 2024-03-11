@@ -389,10 +389,8 @@
         $.ajax({
             type: "GET",
             url: "http://localhost:90/api/product",
-            data: {
-                "user_email": JSON.parse($(".session-data").val())['email']
-            },
             headers: {
+                "UserEmail" : JSON.parse($(".session-data").val())['email'],
                 "Origin": "http://localhost:8000",
                 "Host": "localhost:90",
                 "Access-Control-Request-Method": "GET",
@@ -411,10 +409,8 @@
         $.ajax({
             type: "GET",
             url: "http://localhost:90/api/product",
-            data: {
-                "user_email": JSON.parse($(".session-data").val())['email']
-            },
             headers: {
+                "UserEmail" : JSON.parse($(".session-data").val())['email'],
                 "Origin": "http://localhost:8000",
                 "Host": "localhost:90",
                 "Access-Control-Request-Method": "GET",
@@ -432,10 +428,8 @@
         $.ajax({
             type: "GET",
             url: "http://localhost:90/api/product?page=" + $(e.target).prop('text'),
-            data: {
-                "user_email": JSON.parse($(".session-data").val())['email']
-            },
             headers: {
+                "UserEmail" : JSON.parse($(".session-data").val())['email'],
                 "Origin": "http://localhost:8000",
                 "Host": "localhost:90",
                 "Access-Control-Request-Method": "GET",
@@ -555,6 +549,7 @@
                 "user_email": $('.username').val(),
             },
             headers: {
+                "UserEmail" : JSON.parse($(".session-data").val())['email'],
                 "Origin": "http://localhost:8000",
                 "Host": "localhost:90",
                 "Access-Control-Request-Method": "GET",
@@ -586,6 +581,7 @@
                 "user_email": $('.register-email').val()
             },
             headers: {
+                "UserEmail" : JSON.parse($(".session-data").val())['email'],
                 "Origin": "http://localhost:8000",
                 "Host": "localhost:90",
                 "Access-Control-Request-Method": "GET",
@@ -645,6 +641,7 @@
             url: "http://localhost:90/api/booking",
             data: formDataObject,
             headers: {
+                "UserEmail" : JSON.parse($(".session-data").val())['email'],
                 "Origin": "http://localhost:8000",
                 "Host": "localhost:90",
                 "Access-Control-Request-Method": "GET",

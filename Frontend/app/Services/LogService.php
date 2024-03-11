@@ -2,17 +2,16 @@
 
 namespace App\Services;
 
-
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 
-class CategoryService
+class LogService
 {
-    public static function getCategories(): array
+    public static function getLogs()
     {
         $userEmail = !empty(Session::get('user')) ? Session::get('user')['userData']['email'] : '';
         $responseBody = Http::withHeader('UserEmail', $userEmail)
-            ->get("http://hairsaloon.api/api/category")->body();
+            ->get("http://hairsaloon.api/api/logs")->body();
         return json_decode($responseBody);
     }
 }

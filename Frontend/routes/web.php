@@ -61,4 +61,7 @@ Route::prefix('/admin')->middleware(PreventUserAccess::class)->group(function ()
             'products' => ProductService::getAdminProducts()['data']
         ]);
     });
+    Route::get('/logs', function () {
+        return view('admin/logs');
+    });
 });

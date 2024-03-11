@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Services\UserActionsService;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -9,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class LogUserActions
 {
-    public const ROUTE_DESCRIPTION =[
+    public const ROUTE_DESCRIPTION = [
         '/^\/api\/product$/' => [
             "POST" => 'Created a new product',
             "GET" => 'Viewed products list'
@@ -84,22 +85,34 @@ class LogUserActions
         ],
         '/^\/api\/login$/' => [
             "GET" => 'Authenticated user'
+        ],
+        '/^\/api\/logs$/' => [
+            "GET" => 'Viewed logs'
         ]
     ];
+
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response) $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next): Response|null
     {
         $regexPattern = "/^" . preg_replace('/\/\d+$/', '/\d+', preg_quote($request->getPathInfo(), '/')) . "$/";
         $requestParameters = $request->route()->parameters();
         $id = reset($requestParameters);
+        $action = self::ROUTE_DESCRIPTION[$regexPattern][$request->method()];
+        $userEmail = json_encode($request->get('user_email'));
+        if(empty($userEmail=='')){
+            $userEmail = $request->header('UserEmail');
+        }
+        UserActionsService::save([
+            'action' => $action,
+            'user_email' => $userEmail,
+            'object_id' => is_numeric($id) ?? '',
+        ]);
         Log::channel('user_action')->info(
-            "User with email: " . json_encode($request->get('user_email')) . ' ' .
-            self::ROUTE_DESCRIPTION[$regexPattern][$request->method()] .
-            (is_numeric($id)?" with ID " . $id : '')
+            "User with email: " . $userEmail . ' ' . $action . (is_numeric($id) ? " with ID " . $id : '')
         );
         return $next($request);
     }

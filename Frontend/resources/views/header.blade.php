@@ -80,6 +80,9 @@
                             <li class="has-dropdown">
                                 <a href="/admin/home">Admin Panel</a>
                             </li>
+                            <li class="has-dropdown">
+                                <a href="/admin/logs">Logs</a>
+                            </li>
                         @endif
                         <!-- li end -->
                         <!-- Gallery Menu-->

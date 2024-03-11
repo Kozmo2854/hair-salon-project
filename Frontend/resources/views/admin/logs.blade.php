@@ -18,6 +18,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js" ></script>
 <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.js" ></script>
 <script src="{{ asset('js/dataTables.altEditor.js') }}" defer></script>
-<script src="{{ asset('js/createTable.js')}}" defer></script>
+<script src="{{ asset('js/createLogTable.js')}}" defer></script>
 </body>
 </html>
