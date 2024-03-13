@@ -2,13 +2,32 @@
 <html dir="ltr" lang="en-US">
 @include('head')
 <body>
-@include('header')
-<div class="container">
+<div id="wrapper" class="wrapper clearfix">
+    @include('header')
+    <div class="bg-section">
+        <img src="http://demo.zytheme.com/hairy/assets/images/page-titles/3.jpg" alt="Background"/>
+    </div>
+    <div class="container">
 
-    <table cellpadding="0" cellspacing="0" border="0" class="dataTable table table-striped" id="example">
+        <table cellpadding="0" cellspacing="0" border="0" class="dataTable table table-striped" id="example">
 
-    </table>
+        </table>
 
+    </div>
+    <footer id="footer" class="footer footer-light">
+        <!-- Copyrights
+        ============================================= -->
+        <div class="footer--copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text--center">
+                        <span>&copy; 2017, All rights reserved.</span>
+                    </div>
+                </div>
+            </div>
+            <!-- .container end -->
+        </div>
+    </footer>
 </div>
 <script src="https://code.jquery.com/jquery-3.0.0.js" ></script>
 <script src="https://code.jquery.com/jquery-migrate-3.3.0.js" ></script>
@@ -19,5 +38,7 @@
 <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.js" ></script>
 <script src="{{ asset('js/dataTables.altEditor.js') }}" defer></script>
 <script src="{{ asset('js/createTable.js')}}" defer></script>
+<script src="{{ asset('js/functions.js') }}" defer></script>
 </body>
 </html>
+

@@ -60,7 +60,7 @@ function printCartPageItems(items) {
         }
     }
     if (text == '') {
-        text = "<h1 class='slide--headline no-products'>No products in cart.</h1>"
+        text = "<tr><td colspan=\"4\" class=\"text-center\"><h1>No products in cart.</h1></td></tr>"
     }
     $('.cart-product-body').html(text)
     addCrossEventListener();

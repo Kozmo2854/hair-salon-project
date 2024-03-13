@@ -7999,3 +7999,10 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
 .product-orders-panel{
     width: 20%;
 }
+.example_paginate{
+    background: white;
+    opacity: 0.8;
+}
+.full-height {
+    height: 100vh; /* Full viewport height */
+}
