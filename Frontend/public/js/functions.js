@@ -407,7 +407,7 @@
         e.preventDefault()
         $.ajax({
             type: "GET",
-            url: "http://localhost:90/api/product",
+            url: "http://localhost:90/api/product?page=1",
             headers: {
                 "UserEmail" : JSON.parse($(".session-data").val())['email'],
                 "Origin": "http://localhost:8000",
@@ -415,6 +415,7 @@
                 "Access-Control-Request-Method": "GET",
             },
             success: function (items) {
+                items = JSON.parse(items).data
                 writeProducts(items)
             }
         });

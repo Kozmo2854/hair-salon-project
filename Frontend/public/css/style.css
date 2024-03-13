@@ -7991,7 +7991,8 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
     text-align: center;
 }
 .bg-overlay{
-    height: 100dvh;
+    /*min-height: 90vh; !* Set minimum height to 100vh *!*/
+    min-height: -webkit-fill-available; /* Allow div to expand beyond viewport height */
 }
 .product-admin-panel{
     width:100%;
@@ -8005,4 +8006,7 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
 }
 .full-height {
     height: 100vh; /* Full viewport height */
+}
+.page-title-logs{
+    min-height:90vh;
 }

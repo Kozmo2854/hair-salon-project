@@ -12,10 +12,16 @@
 <body>
 <div id="wrapper" class="wrapper clearfix full-height">
     @include('header')
+    <section id="page-title" class="page-title bg-overlay bg-overlay-dark bg-parallax">
     <div class="bg-section">
         <img src="http://demo.zytheme.com/hairy/assets/images/page-titles/3.jpg" alt="Background"/>
     </div>
     <div class="container-fluid full-height">
+        @if(empty($orders))
+            <h1 class="col-lg-12 text-center full-height color-white" style="margin-top: 200px">
+                <td colspan="3" class="text-center">You have no orders yet.</td>
+            </h1>
+        @else
         <div class="row full-height">
             <div class="col-lg-12 text-center full-height">
                 <div class="table-responsive full-height">
@@ -28,11 +34,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @if(empty($orders))
-                        <tr>
-                            <td colspan="3" class="text-center">No orders available</td>
-                        </tr>
-                        @else
                         @foreach($orders as $order)
                         <tr>
                             @foreach($order as $row => $value)
@@ -52,7 +53,6 @@
                             @endforeach
                         </tr>
                         @endforeach
-                        @endif
                         <!-- Add more rows as needed -->
                         </tbody>
                     </table>
@@ -60,6 +60,8 @@
             </div>
         </div>
     </div>
+    @endif
+    </section>
 </div>
 
 {{--        <div class="container">--}}
